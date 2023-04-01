@@ -4,6 +4,7 @@
 composer.lock
 /public/storage
 /storage/*.key
+/public/admin
 /vendor
 .env
 .env.backup
