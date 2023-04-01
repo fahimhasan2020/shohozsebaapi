@@ -69,7 +69,7 @@
         <div class="flex-center position-ref full-height">
                 <div class="top-right links">
                         <a href="{{ url('/admins/login') }}">HOME</a>
-                        <a href="#">V-1.0</a>
+                        <a href="#">V-1.1</a>
                 </div>
             <div class="content">
                 <div class="title m-b-md">
