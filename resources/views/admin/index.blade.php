@@ -33,7 +33,7 @@
     <!--Morris Chart-->
     <script src="{{asset('admin/plugins/morris/morris.min.js')}}"></script>
     <script src="{{asset('admin/plugins/raphael/raphael-min.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnRbei5qlHVY9e6OUJvesEpPTeX1pql8E"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzaNdBjQIkBrn_UtvMEreLNI9Cm0H999k"
             async defer></script>
     <script src="{{ mix('admin/admin.js') }}" defer></script>
 </head>

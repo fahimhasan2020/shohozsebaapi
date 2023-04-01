@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"051056e693642933aebe","1":"23f9d4de9a783cb246ea","2":"ec94ea104795b0ff90ea","3":"e96e82f6b06ddfe71703","4":"a33577fcd8174224adac","5":"f297c4c3193abed5d3e3","6":"1a38aea4299daf36a19f","7":"b3601dd2d23bab282fe5","8":"b591945d946fd21ed9e8","9":"0daba79fce82c8356d8a","10":"fb9cdbd0d4d2d93d62f0","11":"4bde00e2177c33c726bf","12":"806468b673763b9e3aab","13":"82685d9273830e9363a7","14":"b67567334ab5fd6fb3f1","15":"02be5990dfd9aa29d75d","16":"740c28f2cb05df3f2308","17":"89c17805a7557af0eb49","18":"6b361c56a096728309b5","19":"a562d60a640bc98c1fa3","20":"bfd824abae71b75229e8","21":"275677a6f1fdb92e7ab1","22":"67c68ab21fa6ab12c002","23":"8cf90216d0d56467fba1","24":"76d1d6992b8538bb774a","25":"3acd795cb14aaab71c0d","26":"84ffdeb1fc4e88b6b6a3","27":"1363e6f9f594192d2ba5","28":"16891884f6e242130b7b","29":"47fb99529e1e2af008fb","30":"49720ea091ca0cda4778","31":"37aa925a7f59e8d63a20","32":"314f5f21058818dde709","33":"16981324d5ccc4a2808c","34":"2423feae1ba0a14330b8","35":"2fdd46c89ff9ef8f90d3","36":"dd722b5b0c46648005a4","37":"1682b3cd3335ade96d88","38":"ffddae075ea50b34db52","39":"e7680aacb236e34ece96","40":"849fe265f81e803f11a5","41":"e0959568767a2fa942c2","42":"7f9dae7f76fcde62743b","43":"f12d17969e11d6a391ae","44":"0f3bd9c7637235bfe657"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"8910eef5e46fa48c7752","1":"cd63002b84d5f0ffcdbd","2":"e0246349c7011e4e48d5","3":"e96e82f6b06ddfe71703","4":"a33577fcd8174224adac","5":"f297c4c3193abed5d3e3","6":"1a38aea4299daf36a19f","7":"b3601dd2d23bab282fe5","8":"b591945d946fd21ed9e8","9":"0daba79fce82c8356d8a","10":"fb9cdbd0d4d2d93d62f0","11":"4bde00e2177c33c726bf","12":"806468b673763b9e3aab","13":"82685d9273830e9363a7","14":"b67567334ab5fd6fb3f1","15":"02be5990dfd9aa29d75d","16":"de1248d8a09b5e00eaea","17":"24d72c4476137a23f532","18":"c303f96cb81324b83e57","19":"c2de9689b515c94eccb2","20":"61e2608c0a538ea572df","21":"26f4c6baead63a042529","22":"859f9f28a13005078578","23":"fc7b50470ab0f1bd852c","24":"0a5e812f307f2ea11473","25":"0608613119bf7434eec1","26":"df071ed0fed337e2afa1","27":"037692215b4ff83f927c","28":"f5b6506bef7cca0b15a1","29":"1ea0567425bd552a03a7","30":"2015994fde71400bc41c","31":"ef06acf8b0d02ae9b38a","32":"00ff39e2cf88011e6258","33":"892df2b1ab342d1cd641","34":"80d2008171ff640f5272","35":"573c3aa5cc7f2e374b46","36":"3c753e029f3cf597a436","37":"0aec900887b008d02b38","38":"9dd8e19b4da3fae921ed","39":"3bbc21dff9a02aacf88c","40":"849fe265f81e803f11a5","41":"e0959568767a2fa942c2","42":"7f9dae7f76fcde62743b","43":"9420e2796b119b8a87e8"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -69949,302 +69949,302 @@ var map = {
 	"./BrowserDetect": [
 		"./resources/js/Pages/BrowserDetect.vue",
 		7,
-		25
+		26
 	],
 	"./BrowserDetect.vue": [
 		"./resources/js/Pages/BrowserDetect.vue",
 		7,
-		25
+		26
 	],
 	"./Dashboard": [
 		"./resources/js/Pages/Dashboard.vue",
-		0,
 		1,
+		0,
 		2,
-		16
+		17
 	],
 	"./Dashboard.vue": [
 		"./resources/js/Pages/Dashboard.vue",
-		0,
 		1,
+		0,
 		2,
-		16
+		17
 	],
 	"./Forget": [
 		"./resources/js/Pages/Forget.vue",
-		26
+		27
 	],
 	"./Forget.vue": [
 		"./resources/js/Pages/Forget.vue",
-		26
+		27
 	],
 	"./HoldScreen": [
 		"./resources/js/Pages/HoldScreen.vue",
-		35
+		36
 	],
 	"./HoldScreen.vue": [
 		"./resources/js/Pages/HoldScreen.vue",
-		35
+		36
 	],
 	"./LockScreen": [
 		"./resources/js/Pages/LockScreen.vue",
-		17
+		18
 	],
 	"./LockScreen.vue": [
 		"./resources/js/Pages/LockScreen.vue",
-		17
+		18
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.vue",
-		18
+		19
 	],
 	"./Login.vue": [
 		"./resources/js/Pages/Login.vue",
-		18
+		19
 	],
 	"./Mail/Compose": [
 		"./resources/js/Pages/Mail/Compose.vue",
 		40,
-		0,
 		1,
+		0,
 		2,
 		14
 	],
 	"./Mail/Compose.vue": [
 		"./resources/js/Pages/Mail/Compose.vue",
 		40,
-		0,
 		1,
+		0,
 		2,
 		14
 	],
 	"./Mail/Contacts": [
 		"./resources/js/Pages/Mail/Contacts.vue",
-		0,
 		1,
+		0,
 		2,
-		29
+		30
 	],
 	"./Mail/Contacts.vue": [
 		"./resources/js/Pages/Mail/Contacts.vue",
-		0,
 		1,
+		0,
 		2,
-		29
+		30
 	],
 	"./Mail/Draft": [
 		"./resources/js/Pages/Mail/Draft.vue",
-		0,
 		1,
+		0,
 		2,
 		9
 	],
 	"./Mail/Draft.vue": [
 		"./resources/js/Pages/Mail/Draft.vue",
-		0,
 		1,
+		0,
 		2,
 		9
 	],
 	"./Mail/Inbox": [
 		"./resources/js/Pages/Mail/Inbox.vue",
-		0,
 		1,
+		0,
 		2,
 		10
 	],
 	"./Mail/Inbox.vue": [
 		"./resources/js/Pages/Mail/Inbox.vue",
-		0,
 		1,
+		0,
 		2,
 		10
 	],
 	"./Mail/Inc/Navigation": [
 		"./resources/js/Pages/Mail/Inc/Navigation.vue",
-		36
+		37
 	],
 	"./Mail/Inc/Navigation.vue": [
 		"./resources/js/Pages/Mail/Inc/Navigation.vue",
-		36
+		37
 	],
 	"./Mail/Sent": [
 		"./resources/js/Pages/Mail/Sent.vue",
-		0,
 		1,
+		0,
 		2,
 		11
 	],
 	"./Mail/Sent.vue": [
 		"./resources/js/Pages/Mail/Sent.vue",
-		0,
 		1,
+		0,
 		2,
 		11
 	],
 	"./Mail/SingleInfoMail": [
 		"./resources/js/Pages/Mail/SingleInfoMail.vue",
-		0,
 		1,
+		0,
 		2,
 		8
 	],
 	"./Mail/SingleInfoMail.vue": [
 		"./resources/js/Pages/Mail/SingleInfoMail.vue",
-		0,
 		1,
+		0,
 		2,
 		8
 	],
 	"./Mail/Spam": [
 		"./resources/js/Pages/Mail/Spam.vue",
-		0,
 		1,
+		0,
 		2,
 		12
 	],
 	"./Mail/Spam.vue": [
 		"./resources/js/Pages/Mail/Spam.vue",
-		0,
 		1,
+		0,
 		2,
 		12
 	],
 	"./Mail/Support": [
 		"./resources/js/Pages/Mail/Support.vue",
-		0,
 		1,
+		0,
 		2,
-		30
+		31
 	],
 	"./Mail/Support.vue": [
 		"./resources/js/Pages/Mail/Support.vue",
-		0,
 		1,
+		0,
 		2,
-		30
+		31
 	],
 	"./Mail/Trash": [
 		"./resources/js/Pages/Mail/Trash.vue",
-		0,
 		1,
+		0,
 		2,
 		13
 	],
 	"./Mail/Trash.vue": [
 		"./resources/js/Pages/Mail/Trash.vue",
-		0,
 		1,
+		0,
 		2,
 		13
 	],
 	"./Profile/AccountSettings": [
 		"./resources/js/Pages/Profile/AccountSettings.vue",
-		0,
 		1,
+		0,
 		2,
-		19
+		20
 	],
 	"./Profile/AccountSettings.vue": [
 		"./resources/js/Pages/Profile/AccountSettings.vue",
-		0,
 		1,
+		0,
 		2,
-		19
+		20
 	],
 	"./Profile/EditProfile": [
 		"./resources/js/Pages/Profile/EditProfile.vue",
-		0,
 		1,
+		0,
 		2,
-		20
+		21
 	],
 	"./Profile/EditProfile.vue": [
 		"./resources/js/Pages/Profile/EditProfile.vue",
-		0,
 		1,
+		0,
 		2,
-		20
+		21
 	],
 	"./Profile/Messages": [
 		"./resources/js/Pages/Profile/Messages.vue",
-		0,
 		1,
+		0,
 		2,
-		21
+		22
 	],
 	"./Profile/Messages.vue": [
 		"./resources/js/Pages/Profile/Messages.vue",
-		0,
 		1,
+		0,
 		2,
-		21
+		22
 	],
 	"./Profile/Notifications": [
 		"./resources/js/Pages/Profile/Notifications.vue",
-		0,
 		1,
+		0,
 		2,
-		22
+		23
 	],
 	"./Profile/Notifications.vue": [
 		"./resources/js/Pages/Profile/Notifications.vue",
-		0,
 		1,
+		0,
 		2,
-		22
+		23
 	],
 	"./Profile/Profile": [
 		"./resources/js/Pages/Profile/Profile.vue",
-		0,
 		1,
+		0,
 		2,
 		15
 	],
 	"./Profile/Profile.vue": [
 		"./resources/js/Pages/Profile/Profile.vue",
-		0,
 		1,
+		0,
 		2,
 		15
 	],
 	"./Register": [
 		"./resources/js/Pages/Register.vue",
-		27
+		28
 	],
 	"./Register.vue": [
 		"./resources/js/Pages/Register.vue",
-		27
+		28
 	],
 	"./Reset": [
 		"./resources/js/Pages/Reset.vue",
-		28
+		29
 	],
 	"./Reset.vue": [
 		"./resources/js/Pages/Reset.vue",
-		28
+		29
 	],
 	"./Users/Admin/AdminAdd": [
 		"./resources/js/Pages/Users/Admin/AdminAdd.vue",
-		0,
 		1,
+		0,
 		2,
-		31
+		32
 	],
 	"./Users/Admin/AdminAdd.vue": [
 		"./resources/js/Pages/Users/Admin/AdminAdd.vue",
-		0,
 		1,
+		0,
 		2,
-		31
+		32
 	],
 	"./Users/Admin/AdminEdit": [
 		"./resources/js/Pages/Users/Admin/AdminEdit.vue",
-		37
+		38
 	],
 	"./Users/Admin/AdminEdit.vue": [
 		"./resources/js/Pages/Users/Admin/AdminEdit.vue",
-		37
+		38
 	],
 	"./Users/Admin/AdminHolded": [
 		"./resources/js/Pages/Users/Admin/AdminHolded.vue",
@@ -70258,33 +70258,33 @@ var map = {
 	],
 	"./Users/Admin/AdminList": [
 		"./resources/js/Pages/Users/Admin/AdminList.vue",
-		0,
 		1,
+		0,
 		2,
 		3,
 		5,
 		4,
 		6,
-		32
+		33
 	],
 	"./Users/Admin/AdminList.vue": [
 		"./resources/js/Pages/Users/Admin/AdminList.vue",
-		0,
 		1,
+		0,
 		2,
 		3,
 		5,
 		4,
 		6,
-		32
+		33
 	],
 	"./Users/Admin/AdminView": [
 		"./resources/js/Pages/Users/Admin/AdminView.vue",
-		38
+		39
 	],
 	"./Users/Admin/AdminView.vue": [
 		"./resources/js/Pages/Users/Admin/AdminView.vue",
-		38
+		39
 	],
 	"./Users/Admin/Admins": [
 		"./resources/js/Pages/Users/Admin/Admins.vue",
@@ -70306,91 +70306,91 @@ var map = {
 	],
 	"./Users/Admin/RoleAdd": [
 		"./resources/js/Pages/Users/Admin/RoleAdd.vue",
-		0,
 		1,
+		0,
 		2,
-		23
+		24
 	],
 	"./Users/Admin/RoleAdd.vue": [
 		"./resources/js/Pages/Users/Admin/RoleAdd.vue",
-		0,
 		1,
+		0,
 		2,
-		23
+		24
 	],
 	"./Users/Admin/RoleEdit": [
 		"./resources/js/Pages/Users/Admin/RoleEdit.vue",
-		0,
 		1,
+		0,
 		2,
-		24
+		25
 	],
 	"./Users/Admin/RoleEdit.vue": [
 		"./resources/js/Pages/Users/Admin/RoleEdit.vue",
-		0,
 		1,
+		0,
 		2,
-		24
+		25
 	],
 	"./Users/Admin/RoleList": [
 		"./resources/js/Pages/Users/Admin/RoleList.vue",
 		6,
-		44
+		43
 	],
 	"./Users/Admin/RoleList.vue": [
 		"./resources/js/Pages/Users/Admin/RoleList.vue",
 		6,
-		44
+		43
 	],
 	"./Users/User/UserList": [
 		"./resources/js/Pages/Users/User/UserList.vue",
-		0,
 		1,
+		0,
 		2,
-		33
+		34
 	],
 	"./Users/User/UserList.vue": [
 		"./resources/js/Pages/Users/User/UserList.vue",
-		0,
 		1,
+		0,
 		2,
-		33
+		34
 	],
 	"./inc/Layout": [
 		"./resources/js/Pages/inc/Layout.vue",
-		0,
 		1,
-		43
+		0,
+		16
 	],
 	"./inc/Layout.vue": [
 		"./resources/js/Pages/inc/Layout.vue",
-		0,
 		1,
-		43
+		0,
+		16
 	],
 	"./inc/SideNavBar": [
 		"./resources/js/Pages/inc/SideNavBar.vue",
-		39
+		0
 	],
 	"./inc/SideNavBar.vue": [
 		"./resources/js/Pages/inc/SideNavBar.vue",
-		39
+		0
 	],
 	"./inc/TopNavBar": [
 		"./resources/js/Pages/inc/TopNavBar.vue",
-		0
+		1
 	],
 	"./inc/TopNavBar.vue": [
 		"./resources/js/Pages/inc/TopNavBar.vue",
-		0
+		1
 	],
 	"./ui/Datatable": [
 		"./resources/js/Pages/ui/Datatable.vue",
-		34
+		35
 	],
 	"./ui/Datatable.vue": [
 		"./resources/js/Pages/ui/Datatable.vue",
-		34
+		35
 	]
 };
 function webpackAsyncContext(req) {

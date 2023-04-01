@@ -19,17 +19,17 @@
                             <li><inertia-link href="/admins/email/contact">Contacts</inertia-link></li>
                         </ul>
                     </li><!---------mailbox----------->
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account"></i> <span> User </span> <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li><inertia-link href="/admins/admin">Admin</inertia-link></li>
-                            <li><inertia-link href="/admins/user">User</inertia-link></li>
+                    <li v-if="roles.includes('developper') || roles.includes('superadmin') || roles.includes('admin')" @click="subToggle('user')" class="has_sub">
+                        <a href="javascript:void(0);" :class="['waves-effect',userView]"><i class="mdi mdi-account"></i> <span> User </span> <span class="menu-arrow"></span></a>
+                        <ul :class="['list-unstyled',userBlock]"">
+                            <li v-if="roles.includes('developper') || roles.includes('superadmin')"><inertia-link href="/admins/admin">Admin</inertia-link></li>
+                            <li v-if="roles.includes('developper') || roles.includes('superadmin') || roles.includes('admin')" ><inertia-link href="/admins/user">User</inertia-link></li>
                         </ul>
                     </li><!----------Users------------>
 
 
-                      <li class="menu-title">SHOP</li>
-                    <li class="has_sub">
+                    <li class="menu-title">SHOP</li>
+                        <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-share"></i><span>E-COMMERCE</span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="javascript:void(0);">Orders</a></li>
@@ -79,11 +79,14 @@
         components: {},
         data () {
             return {
-                //
+                roles : [],
+                userView:'',
+                userBlock:''
+
             }
         },
         props: {
-            //
+            
         },
         computed: {
             //
@@ -92,10 +95,25 @@
             //
         },
         mounted () {
-            //
+           this.$page.auth.user.roles.map((item)=>{
+            this.roles.push(item.slug);
+           });
         },
         methods: {
-            //
+           subToggle(value){
+            if(value === 'user' & this.userView === ''){
+                this.userView = 'subdrop';
+                this.userBlock = 'blocka';
+            }else if(value === 'user' & this.userView !== ''){
+                this.userView = '';
+                this.userBlock = '';
+            }
+           }
         }
     };
 </script>
+<style scoped>
+.blocka{
+    display: block !important;
+}
+</style>

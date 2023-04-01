@@ -21,58 +21,54 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card-box">
-                                <h4 class="text-center text-primary">Notification settings</h4>
+                                <h4 class="text-center text-primary">Blog settings</h4>
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="checkbox checkbox-success">
-                                            <input id="notification-sound" type="checkbox">
-                                            <label for="notification-sound">
-                                               Notification sound
-                                            </label>
+                                        <div class="for-group">
+                                            <label>Youtube Link</label>
+                                            <input type="text" v-model="youtube" class="form-control mb-lg" placeholder="Youtube Link" />
                                         </div>
-                                        <div class="checkbox checkbox-success">
-                                            <input id="mail-recieve" type="checkbox">
-                                            <label for="mail-recieve">
-                                                Opt out of receiving mail
-                                            </label>
+                                        <div class="for-group">
+                                            <label>whatsapp Link</label>
+                                            <input type="text" v-model="whatsapp" class="form-control mb-lg" placeholder="Whatsapp link" />
                                         </div>
-                                        <div class="checkbox checkbox-success">
-                                            <input id="user-notification" type="checkbox">
-                                            <label for="user-notification">
-                                                User notifications
-                                            </label>
+                                        <div class="for-group">
+                                            <label>Messanger Link</label>
+                                            <input type="text" v-model="messanger" class="form-control mb-lg" placeholder="Messanger Link" />
                                         </div>
-                                        <button class="btn btn-block btn-primary"><i class="fa fa-save"></i>&nbsp;Save</button>
+                                        <div class="for-group">
+                                            <label>Imo Link</label>
+                                            <input type="text" v-model="imo" class="form-control mb-lg" placeholder="imo Link Link" />
+                                        </div>
+                                        <button @click="updateSocial" class="btn btn-block btn-primary"><i class="fa fa-save"></i>&nbsp;Save</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="card-box">
-                                <h4 class="text-center text-primary">Message settings</h4>
+                                <h4 class="text-center text-primary">Social settings</h4>
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="checkbox checkbox-success">
-                                            <input id="message-sound" type="checkbox">
-                                            <label for="message-sound">
-                                                Message sound
-                                            </label>
+                                        <div class="for-group">
+                                            <label>Facebook Link</label>
+                                            <input type="text" v-model="facebookLink" class="form-control mb-lg" placeholder="Facebook Link" />
                                         </div>
-                                        <div class="checkbox checkbox-success">
-                                            <input id="mail-message" type="checkbox">
-                                            <label for="mail-message">
-                                                Opt out of receiving messages mail
-                                            </label>
+                                        <div class="for-group">
+                                            <label>Twitter Link</label>
+                                            <input type="text" v-model="twitterLink" class="form-control mb-lg" placeholder="Twitter Link" />
                                         </div>
-                                        <div class="checkbox checkbox-success">
-                                            <input id="service-message" type="checkbox">
-                                            <label for="service-message">
-                                                Service message
-                                            </label>
+                                        <div class="for-group">
+                                            <label>Instagram Link</label>
+                                            <input type="text" v-model="instagramLink" class="form-control mb-lg" placeholder="Instagram Link" />
                                         </div>
-                                        <button class="btn btn-block btn-primary"><i class="fa fa-save"></i>&nbsp;Save</button>
+                                        <div class="for-group">
+                                            <label>Linkedin Link</label>
+                                            <input type="text" v-model="linkedinLink" class="form-control mb-lg" placeholder="Linkedin Link Link" />
+                                        </div>
+                                        <button @click="updateSocial" class="btn btn-block btn-primary"><i class="fa fa-save"></i>&nbsp;Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -124,31 +120,19 @@
                         <div class="col-md-6">
                             <div class="card-box">
                                 <h4 class="text-center text-primary">Recent activities</h4>
-                                <hr>
-                                <div class="row acts">
-                                    <div class="col-md-10">
-                                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp;New support issue has been closed
-                                    </div>
-                                    <div class="col-md-2"><a href="javascript:void(0);">view</a></div>
-                                </div>
-                                <div class="row acts">
-                                    <div class="col-md-10">
-                                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp;New support issue has been closed
-                                    </div>
-                                    <div class="col-md-2"><a href="javascript:void(0);">view</a></div>
-                                </div>
-                                <div class="row acts">
-                                    <div class="col-md-10">
-                                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp;New support issue has been closed
-                                    </div>
-                                    <div class="col-md-2"><a href="javascript:void(0);">view</a></div>
-                                </div>
-                                <div class="row acts">
-                                    <div class="col-md-10">
-                                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp;New support issue has been closed
-                                    </div>
-                                    <div class="col-md-2"><a href="javascript:void(0);">view</a></div>
-                                </div>
+                                <div class="form-group">
+                                            <label>phone number</label>
+                                            <input type="text" v-model="phone" class="form-control mb-lg" placeholder="phone number" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Agora Token</label>
+                                            <input type="text" v-model="agora_token" class="form-control mb-lg" placeholder="Agora token" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Support mail</label>
+                                            <input type="text" v-model="email" class="form-control mb-lg" placeholder="Support mail" />
+                                        </div>
+                                        <button @click="updateSocial" class="btn btn-block btn-primary"><i class="fa fa-save"></i>&nbsp;Save</button>
 
                             </div>
                         </div>
@@ -166,11 +150,21 @@
         mixins: [Dashboard],
         data () {
             return {
-                //
+                facebookLink:'',
+                instagramLink:'',
+                twitterLink:'',
+                linkedInLink:'',
+                email:'',
+                phone:'',
+                youtube:'',
+                whatsapp:'',
+                messanger:'',
+                imo:'',
+                agora_token:''
             }
         },
         props: {
-            //
+          configs:Object
         },
         computed: {
             //
@@ -179,9 +173,24 @@
             //
         },
         mounted () {
-            //
+            this.facebookLink = this.configs.facebook;
+            this.twitterLink = this.configs.twitter;
+            this.instagramLink = this.configs.insragram;
+            this.linkedinLink = this.configs.linkedin;
+            this.email = this.configs.email;
+            this.phone = this.configs.phone_number;
+            this.youtube = this.configs.youtube;
+            this.imo = this.configs.imo;
+            this.messanger = this.configs.messanger;
+            this.whatsapp = this.configs.whatsapp;
+            this.agora_token = this.configs.agora_token;
         },
         methods: {
+           updateSocial(){
+            this.$inertia.post('/admins/account/social/update',{facebook:this.facebookLink,twitter:this.twitterLink,instagram:this.instagramLink,phone_number:this.phone,email:this.email,youtube:this.youtube,agora_token:this.agora_token,imo:this.imo,whatsapp:this.whatsapp,messanger:this.messanger,linkedin:this.linkedinLink}).then(()=>{
+
+            });
+           },
            enableTrustedBrowser(data){
                if (data === 'enable'){
                    this.$inertia.post('/admins/enable/trusted/browser/enable');
@@ -206,5 +215,8 @@
         padding-top: 15px;
         margin-bottom: 10px;
         box-shadow: 2px 2px 2px 2px #eee;
+    }
+    .mb-lg{
+        margin-bottom: 10px;
     }
 </style>

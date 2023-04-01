@@ -14,6 +14,7 @@ Route::get('/messages','HomeController@messages')->name('messages');
 Route::post('/message','HomeController@postMessages')->name('post-messages');
 Route::get('/message/get/{id}','HomeController@getMessages')->name('get-messages');
 Route::get('/profile','HomeController@profile')->name('profile');
+Route::post('/account/social/update','HomeController@socialAccountUpdate')->name('profile.social.update');
 Route::get('/profile/edit','HomeController@editProfile')->name('edit.profile');
 Route::get('/settings','HomeController@settings')->name('settings');
 Route::post('/enable/trusted/browser/{id}','HomeController@enableTrustedBrowser')->name('enable-trusted-browser');

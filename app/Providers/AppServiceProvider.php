@@ -57,6 +57,7 @@ class AppServiceProvider extends ServiceProvider
                         'twitter_link' => Sentinel::getUser()->twitter_link,
                         'likedin_link' => Sentinel::getUser()->likedin_link,
                         'browser' => Sentinel::getUser()->browser,
+                        'roles'=>Sentinel::getUser()->roles
                     ] : null
                 ];
             },

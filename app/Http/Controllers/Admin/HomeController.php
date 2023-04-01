@@ -55,8 +55,27 @@ class HomeController extends Controller
         ]);
     }
     public function settings(){
-        return Inertia::render('Profile/AccountSettings');
+        $configs = DB::table("social_platforms")->where('id',1)->first();
+        return Inertia::render('Profile/AccountSettings',['configs'=>$configs]);
     }
+
+    public function socialAccountUpdate(Request $request)
+    {
+        $configs = DB::table("social_platforms")->where('id',1)
+        ->update([ 'facebook' => $request->facebook,
+        'twitter' => $request->twitter,
+        'instagram' => $request->insragram,
+        'linkedin' => $request->linkedin,
+        'email' => $request->email,
+        'phone_number' => $request->phone_number,
+        'youtube' => $request->youtube,
+        'imo' => $request->imo,
+        'messanger' => $request->messanger,
+        'whatsapp' => $request->whatsapp,
+        'agora_token' => $request->agora_token]);
+        return redirect()->back()->with('success','Social settings updated');
+    }
+
     public function saveName(Request $request){
         $request->validate([
             'first_name' => 'required|max:255',
