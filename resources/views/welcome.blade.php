@@ -72,7 +72,7 @@
                 </div>
             <div class="content">
                 <div class="title m-b-md">
-                  Sohoj Sheba API
+                  Kothin Sheba API
                 </div>
 
                 <div class="links">
