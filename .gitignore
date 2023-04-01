@@ -1,5 +1,7 @@
 /node_modules
 /public/hot
+/public/js
+composer.lock
 /public/storage
 /storage/*.key
 /vendor
