@@ -18,9 +18,6 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Install dependencies
-        run: npm install --force
-
       - name: Deploy code
         uses: appleboy/ssh-action@master
         with:
@@ -33,4 +30,5 @@ jobs:
             git pull origin master
             composer update
             php artisan migrate:fresh --seed
-            npm dev
+            source /home/minhaz/nodevenv/admin.shohozseba.com/14/bin/activate && cd /home/minhaz/admin.shohozseba.com
+            npm run dev
