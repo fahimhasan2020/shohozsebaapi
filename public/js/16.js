@@ -11,335 +11,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inc_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inc/Layout */ "./resources/js/Pages/inc/Layout.vue");
 /* harmony import */ var _Mixins_Dashboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Mixins/Dashboard */ "./resources/js/Mixins/Dashboard.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -390,22 +61,22 @@ __webpack_require__.r(__webpack_exports__);
       yesterdaySubscriptionCanceled: null
     };
   },
-  props: {//
+  props: {
+    //
   },
-  computed: {//
+  computed: {
+    //
   },
-  created: function created() {//
+  created: function created() {
+    //
   },
   mounted: function mounted() {
     var _this = this;
-
     this.initializedMarkers();
     setTimeout(function () {
       var name = localStorage.getItem("name_checked");
-
       if (name === null) {
         localStorage.setItem("name_checked", "pending");
-
         if (_this.$page.auth.user.first_name === null || _this.$page.auth.user.last_name === null) {
           _this.modalActive = true;
         }
@@ -467,7 +138,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     saveName: function saveName() {
       var _this2 = this;
-
       if (this.infoForm.first_name === '' || this.infoForm.last_name === '') {
         if (this.infoForm.first_name === '') {
           this.infoFormError.first_name = 'First name required';
@@ -476,7 +146,6 @@ __webpack_require__.r(__webpack_exports__);
           this.infoFormError.first_name = '';
           this.infoFormErrorClass.first_name = '';
         }
-
         if (this.infoForm.last_name === '') {
           this.infoFormError.last_name = 'Last name required';
           this.infoFormErrorClass.last_name = 'red';
@@ -490,14 +159,12 @@ __webpack_require__.r(__webpack_exports__);
           _this2.infoFormErrorClass.first_name = '';
           _this2.infoFormError.last_name = '';
           _this2.infoFormErrorClass.last_name = '';
-
           _this2.hideModal();
         });
       }
     },
     getDataForMap: function getDataForMap(data) {
       var _this3 = this;
-
       if (data === 'today') {
         this.weekMapClass = 'btn-success';
         this.monthMapClass = 'btn-success';
@@ -623,14 +290,12 @@ __webpack_require__.r(__webpack_exports__);
           });
           var infowindow = new google.maps.InfoWindow();
           var marker, i;
-
           for (i = 0; i < _this3.mapVisitors.length; i++) {
             marker = new google.maps.Marker({
               position: new google.maps.LatLng(_this3.mapVisitors[i].lat, _this3.mapVisitors[i].lng),
               icon: '../../../../images/pin.png',
               map: map
             });
-
             _this3.contentMessage(marker, _this3.mapVisitors[i].ip);
           }
         });
@@ -755,14 +420,12 @@ __webpack_require__.r(__webpack_exports__);
           });
           var infowindow = new google.maps.InfoWindow();
           var marker, i;
-
           for (i = 0; i < _this3.mapVisitors.length; i++) {
             marker = new google.maps.Marker({
               position: new google.maps.LatLng(_this3.mapVisitors[i].lat, _this3.mapVisitors[i].lng),
               map: map,
               icon: '../../../../images/pin.png'
             });
-
             _this3.contentMessage(marker, _this3.mapVisitors[i].ip);
           }
         });
@@ -770,7 +433,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     initializedMarkers: function initializedMarkers() {
       var _this4 = this;
-
       this.todayMapClass = 'btn-info';
       axios.get('/admins/todays/visitor-markers').then(function (response) {
         _this4.mapVisitors = response.data;
@@ -889,14 +551,12 @@ __webpack_require__.r(__webpack_exports__);
         });
         var infowindow = new google.maps.InfoWindow();
         var marker, i;
-
         for (i = 0; i < _this4.mapVisitors.length; i++) {
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(_this4.mapVisitors[i].lat, _this4.mapVisitors[i].lng),
             map: map,
             icon: '../../../../images/pin.png'
           });
-
           _this4.contentMessage(marker, _this4.mapVisitors[i].ip);
         }
       });
@@ -911,7 +571,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     initializedMostVisitedPage: function initializedMostVisitedPage() {
       var _this5 = this;
-
       axios.get('/admins/visitors/pages/list').then(function (response) {
         _this5.mostVisitedPagesTodayClass = 'btn-info';
         _this5.mostVisitedPagesWeeklyClass = 'btn-success';
@@ -921,7 +580,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     initializedMostVisitedCountry: function initializedMostVisitedCountry() {
       var _this6 = this;
-
       axios.get('/admins/most-visitor-country/today').then(function (response) {
         _this6.mostVisitedCountriesTodayClass = 'btn-info';
         _this6.mostVisitedCountriesWeeklyClass = 'btn-success';
@@ -931,7 +589,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     getDataForMostVisitedPages: function getDataForMostVisitedPages(data) {
       var _this7 = this;
-
       if (data === 'today') {
         this.initializedMostVisitedPage();
       } else if (data === 'week') {
@@ -952,7 +609,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     getDataForMostVisitedCountries: function getDataForMostVisitedCountries(data) {
       var _this8 = this;
-
       if (data === 'today') {
         this.initializedMostVisitedCountry();
       } else if (data === 'week') {
@@ -973,23 +629,534 @@ __webpack_require__.r(__webpack_exports__);
     },
     subscriberChartLoader: function subscriberChartLoader() {
       var _this9 = this;
-
       axios.get('/admins/subscribers/monthly/count').then(function (response) {
         var i;
         var datas = [];
         var lebels = [];
-
         for (i = 0; i < response.data.length; i++) {
           datas.push(response.data[i].views);
           lebels.push(response.data[i].date);
         }
-
         _this9.subscribedChartData = datas;
         _this9.subscribedChartDate = lebels;
       });
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("layout", {
+    attrs: {
+      title: "Admin | Dashboard"
+    }
+  }, [_c("div", {
+    staticClass: "content-page"
+  }, [_c("div", {
+    staticClass: "content"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-xs-12"
+  }, [_c("div", {
+    staticClass: "page-title-box"
+  }, [_c("h4", {
+    staticClass: "page-title"
+  }, [_vm._v("Dashboard")]), _vm._v(" "), _c("ol", {
+    staticClass: "breadcrumb p-0 m-0"
+  }, [_c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Admin")])]), _vm._v(" "), _c("li", {
+    attrs: {
+      CLASS: "active"
+    }
+  }, [_vm._v("\n                                    Dashboard\n                                ")])]), _vm._v(" "), _c("div", {
+    staticClass: "clearfix"
+  })])])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-lg-2 col-md-4 col-sm-6"
+  }, [_c("div", {
+    staticClass: "card-box widget-box-one"
+  }, [_c("i", {
+    staticClass: "mdi mdi-chart-areaspline widget-one-icon"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "wigdet-one-content"
+  }, [_c("p", {
+    staticClass: "m-0 text-uppercase font-600 font-secondary text-overflow",
+    attrs: {
+      title: "Statistics"
+    }
+  }, [_vm._v("Today visited")]), _vm._v(" "), _c("h2", [_vm.todayVisited || _vm.todayVisited === 0 ? _c("span", [_vm._v(_vm._s(_vm.todayVisited))]) : _c("span", [_c("i", {
+    staticClass: "fa fa-refresh fa-spin"
+  })]), _vm._v(" "), _c("small", [_vm.todayVisited > _vm.yesterdayVisited ? _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-up text-success"
+  })]) : _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-down text-danger"
+  })])])]), _vm._v(" "), _c("p", {
+    staticClass: "text-muted m-0"
+  }, [_c("b", [_vm._v("Last:")]), _vm._v(" " + _vm._s(_vm.yesterdayVisited))])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-2 col-md-4 col-sm-6"
+  }, [_c("div", {
+    staticClass: "card-box widget-box-one"
+  }, [_c("i", {
+    staticClass: "mdi mdi-account-convert widget-one-icon"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "wigdet-one-content"
+  }, [_c("p", {
+    staticClass: "m-0 text-uppercase font-600 font-secondary text-overflow",
+    attrs: {
+      title: "User Today"
+    }
+  }, [_vm._v("Weekly visitor")]), _vm._v(" "), _c("h2", [_vm.weeklyVisited || _vm.weeklyVisited === 0 ? _c("span", [_vm._v(_vm._s(_vm.weeklyVisited))]) : _c("span", [_c("i", {
+    staticClass: "fa fa-refresh fa-spin"
+  })]), _vm._v(" "), _c("small", [_vm.weeklyVisited > _vm.lastWeekVisited ? _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-up text-success"
+  })]) : _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-down text-danger"
+  })])])]), _vm._v(" "), _c("p", {
+    staticClass: "text-muted m-0"
+  }, [_c("b", [_vm._v("Last:")]), _vm._v(" " + _vm._s(_vm.lastWeekVisited))])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-2 col-md-4 col-sm-6"
+  }, [_c("div", {
+    staticClass: "card-box widget-box-one"
+  }, [_c("i", {
+    staticClass: "mdi mdi-layers widget-one-icon"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "wigdet-one-content"
+  }, [_c("p", {
+    staticClass: "m-0 text-uppercase font-600 font-secondary text-overflow",
+    attrs: {
+      title: "User This Month"
+    }
+  }, [_vm._v("Monthly visitor")]), _vm._v(" "), _c("h2", [_vm.monthlyVisited || _vm.monthlyVisited === 0 ? _c("span", [_vm._v(_vm._s(_vm.monthlyVisited))]) : _c("span", [_c("i", {
+    staticClass: "fa fa-refresh fa-spin"
+  })]), _vm._v(" "), _c("small", [_vm.monthlyVisited > _vm.lastMonthVisited ? _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-up text-success"
+  })]) : _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-down text-danger"
+  })])])]), _vm._v(" "), _c("p", {
+    staticClass: "text-muted m-0"
+  }, [_c("b", [_vm._v("Last:")]), _vm._v(" " + _vm._s(_vm.lastMonthVisited))])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-2 col-md-4 col-sm-6"
+  }, [_c("div", {
+    staticClass: "card-box widget-box-one"
+  }, [_c("i", {
+    staticClass: "mdi mdi-av-timer widget-one-icon"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "wigdet-one-content"
+  }, [_c("p", {
+    staticClass: "m-0 text-uppercase font-600 font-secondary text-overflow",
+    attrs: {
+      title: "Request Per Minute"
+    }
+  }, [_vm._v("Newly registered")]), _vm._v(" "), _c("h2", [_vm.newlyRegistered || _vm.newlyRegistered === 0 ? _c("span", [_vm._v(_vm._s(_vm.newlyRegistered))]) : _c("span", [_c("i", {
+    staticClass: "fa fa-refresh fa-spin"
+  })]), _vm._v(" "), _c("small", [_vm.newlyRegistered > _vm.yesterdayRegistered ? _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-up text-success"
+  })]) : _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-down text-danger"
+  })])])]), _vm._v(" "), _c("p", {
+    staticClass: "text-muted m-0"
+  }, [_c("b", [_vm._v("Last:")]), _vm._v(" " + _vm._s(_vm.yesterdayRegistered))])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-2 col-md-4 col-sm-6"
+  }, [_c("div", {
+    staticClass: "card-box widget-box-one"
+  }, [_c("i", {
+    staticClass: "mdi mdi-account-multiple widget-one-icon"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "wigdet-one-content"
+  }, [_c("p", {
+    staticClass: "m-0 text-uppercase font-600 font-secondary text-overflow",
+    attrs: {
+      title: "Total Users"
+    }
+  }, [_vm._v("Newly subscribed")]), _vm._v(" "), _c("h2", [_vm.newlySubscribed || _vm.newlySubscribed === 0 ? _c("span", [_vm._v(_vm._s(_vm.newlySubscribed))]) : _c("span", [_c("i", {
+    staticClass: "fa fa-refresh fa-spin"
+  })]), _vm._v(" "), _c("small", [_vm.newlySubscribed > _vm.yesterdaySubscribed ? _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-up text-success"
+  })]) : _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-down text-danger"
+  })])])]), _vm._v(" "), _c("p", {
+    staticClass: "text-muted m-0"
+  }, [_c("b", [_vm._v("Last:")]), _vm._v(" " + _vm._s(_vm.yesterdaySubscribed))])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-2 col-md-4 col-sm-6"
+  }, [_c("div", {
+    staticClass: "card-box widget-box-one"
+  }, [_c("i", {
+    staticClass: "mdi mdi-download widget-one-icon"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "wigdet-one-content"
+  }, [_c("p", {
+    staticClass: "m-0 text-uppercase font-600 font-secondary text-overflow",
+    attrs: {
+      title: "New Downloads"
+    }
+  }, [_vm._v("Subscription canceled")]), _vm._v(" "), _c("h2", [_vm.subscriptionCanceled || _vm.subscriptionCanceled === 0 ? _c("span", [_vm._v(_vm._s(_vm.subscriptionCanceled))]) : _c("span", [_c("i", {
+    staticClass: "fa fa-refresh fa-spin"
+  })]), _vm._v(" "), _c("small", [_vm.subscriptionCanceled > _vm.yesterdaySubscriptionCanceled ? _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-up text-success"
+  })]) : _c("span", [_c("i", {
+    staticClass: "mdi mdi-arrow-down text-danger"
+  })])])]), _vm._v(" "), _c("p", {
+    staticClass: "text-muted m-0"
+  }, [_c("b", [_vm._v("Last:")]), _vm._v(" " + _vm._s(_vm.yesterdaySubscriptionCanceled))])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticStyle: {
+      height: "500px",
+      width: "100%",
+      "background-color": "#000",
+      "margin-bottom": "20px"
+    },
+    attrs: {
+      id: "map"
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "selection"
+  }, [_c("div", {
+    staticClass: "btn-group btn-group-sm",
+    attrs: {
+      role: "group",
+      "aria-label": "Basic example"
+    }
+  }, [_c("button", {
+    staticClass: "btn",
+    "class": _vm.todayMapClass,
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.getDataForMap("today");
+      }
+    }
+  }, [_vm._v("Today")]), _vm._v(" "), _c("button", {
+    staticClass: "btn",
+    "class": _vm.weekMapClass,
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.getDataForMap("week");
+      }
+    }
+  }, [_vm._v("This week")]), _vm._v(" "), _c("button", {
+    staticClass: "btn",
+    "class": _vm.monthMapClass,
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.getDataForMap("month");
+      }
+    }
+  }, [_vm._v("This month")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-lg-6"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h4", {
+    staticClass: "header-title m-t-0 m-b-30"
+  }, [_vm._v("Mostly visited pages")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", [_c("div", {
+    staticClass: "btn-group btn-group-sm",
+    attrs: {
+      role: "group",
+      "aria-label": "Basic example"
+    }
+  }, [_c("button", {
+    staticClass: "btn",
+    "class": _vm.mostVisitedPagesTodayClass,
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.getDataForMostVisitedPages("today");
+      }
+    }
+  }, [_vm._v("Today")]), _vm._v(" "), _c("button", {
+    staticClass: "btn",
+    "class": _vm.mostVisitedPagesWeeklyClass,
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.getDataForMostVisitedPages("week");
+      }
+    }
+  }, [_vm._v("This week")]), _vm._v(" "), _c("button", {
+    staticClass: "btn",
+    "class": _vm.mostVisitedPagesMonthlyClass,
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.getDataForMostVisitedPages("month");
+      }
+    }
+  }, [_vm._v("This month")])])]), _vm._v(" "), _c("div", {
+    staticClass: "table-responsive"
+  }, [_c("table", {
+    staticClass: "table table table-hover m-0"
+  }, [_c("thead", [_c("tr", [_c("th", [_vm._v("No")]), _vm._v(" "), _c("th", [_vm._v("Page name")]), _vm._v(" "), _c("th", [_vm._v("Visited")])])]), _vm._v(" "), _c("tbody", _vm._l(_vm.mostVisitedPages, function (p) {
+    return _c("tr", [_c("td", [_vm._v("1")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(p.page_title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(p.count))])]);
+  }), 0)])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-6"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h4", {
+    staticClass: "header-title m-t-0 m-b-30"
+  }, [_vm._v("Most visitor countries")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", [_c("div", {
+    staticClass: "btn-group btn-group-sm",
+    attrs: {
+      role: "group",
+      "aria-label": "Basic example"
+    }
+  }, [_c("button", {
+    staticClass: "btn",
+    "class": _vm.mostVisitedCountriesTodayClass,
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.getDataForMostVisitedCountries("today");
+      }
+    }
+  }, [_vm._v("Today")]), _vm._v(" "), _c("button", {
+    staticClass: "btn",
+    "class": _vm.mostVisitedCountriesWeeklyClass,
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.getDataForMostVisitedCountries("week");
+      }
+    }
+  }, [_vm._v("This week")]), _vm._v(" "), _c("button", {
+    staticClass: "btn",
+    "class": _vm.mostVisitedCountriesMonthlyClass,
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.getDataForMostVisitedCountries("month");
+      }
+    }
+  }, [_vm._v("This month")])])]), _vm._v(" "), _c("div", {
+    staticClass: "table-responsive"
+  }, [_c("table", {
+    staticClass: "table table table-hover m-0"
+  }, [_c("thead", [_c("tr", [_c("th", [_vm._v("No")]), _vm._v(" "), _c("th", [_vm._v("Country")]), _vm._v(" "), _c("th", [_vm._v("Visited")])])]), _vm._v(" "), _c("tbody", _vm._l(_vm.mostVisitedCountries, function (p) {
+    return _c("tr", [_c("td", [_vm._v("1")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(p.country_code))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(p.count))])]);
+  }), 0)])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-lg-6"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h1", [_vm._v("Google Analytics reports of visitors")]), _vm._v(" "), _c("TrendChart", {
+    attrs: {
+      datasets: [{
+        data: [10, 50, 20, 100, 40, 60, 80],
+        smooth: true,
+        fill: true
+      }],
+      grid: {
+        verticalLines: true,
+        horizontalLines: true
+      },
+      labels: {
+        xLabels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        yLabels: 5
+      },
+      min: 0
+    }
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-6"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h1", [_vm._v("Site Analytics reports of subscribers")]), _vm._v(" "), _c("TrendChart", {
+    attrs: {
+      datasets: [{
+        data: _vm.subscribedChartData,
+        smooth: true,
+        fill: true
+      }],
+      grid: {
+        verticalLines: true,
+        horizontalLines: true
+      },
+      labels: {
+        xLabels: _vm.subscribedChartDate,
+        yLabels: 5
+      },
+      min: 0
+    }
+  })], 1)])]), _vm._v(" "), _vm.modalActive ? _c("div", {
+    staticClass: "modal modal-active",
+    attrs: {
+      id: "exampleModalScrollable",
+      tabindex: "-1",
+      role: "dialog",
+      "aria-labelledby": "exampleModalScrollableTitle",
+      "aria-hidden": "true"
+    }
+  }, [_c("div", {
+    staticClass: "modal-dialog modal-dialog-scrollable",
+    attrs: {
+      role: "document"
+    }
+  }, [_c("div", {
+    staticClass: "modal-content",
+    staticStyle: {
+      "box-shadow": "0px 1px 82px 16px #ccc"
+    }
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    staticClass: "modal-title",
+    attrs: {
+      id: "exampleModalScrollableTitle"
+    }
+  }, [_vm._v("Setup Info")]), _vm._v(" "), _c("button", {
+    staticClass: "close",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal",
+      "aria-label": "Close"
+    }
+  }, [_c("span", {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])]), _vm._v(" "), _c("div", {
+    staticClass: "modal-body"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "input-group"
+  }, [_c("span", {
+    staticClass: "input-group-addon"
+  }, [_c("i", {
+    staticClass: "fa fa-user-plus"
+  })]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.infoForm.first_name,
+      expression: "infoForm.first_name"
+    }],
+    staticClass: "form-control",
+    "class": _vm.infoFormErrorClass.first_name,
+    attrs: {
+      type: "text",
+      id: "example-input1-group3",
+      name: "example-input1-group3",
+      placeholder: "First Name"
+    },
+    domProps: {
+      value: _vm.infoForm.first_name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.infoForm, "first_name", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.infoFormError.first_name))])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "input-group"
+  }, [_c("span", {
+    staticClass: "input-group-addon"
+  }, [_c("i", {
+    staticClass: "fa fa-user-plus"
+  })]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.infoForm.last_name,
+      expression: "infoForm.last_name"
+    }],
+    staticClass: "form-control",
+    "class": _vm.infoFormErrorClass.last_name,
+    attrs: {
+      type: "text",
+      id: "example-input1-group2",
+      name: "example-input1-group2",
+      placeholder: "Last Name"
+    },
+    domProps: {
+      value: _vm.infoForm.last_name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.infoForm, "last_name", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.infoFormError.last_name))])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.hideModal.apply(null, arguments);
+      }
+    }
+  }, [_vm._v("Close")]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.saveName
+    }
+  }, [_vm._v("Save changes")])])])])]) : _vm._e()])])])]);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
 
 /***/ }),
 
@@ -1061,874 +1228,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { title: "Admin | Dashboard" } }, [
-    _c("div", { staticClass: "content-page" }, [
-      _c("div", { staticClass: "content" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xs-12" }, [
-              _c("div", { staticClass: "page-title-box" }, [
-                _c("h4", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
-                _vm._v(" "),
-                _c("ol", { staticClass: "breadcrumb p-0 m-0" }, [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Admin")])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { attrs: { CLASS: "active" } }, [
-                    _vm._v(
-                      "\n                                    Dashboard\n                                "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
-              _c("div", { staticClass: "card-box widget-box-one" }, [
-                _c("i", {
-                  staticClass: "mdi mdi-chart-areaspline widget-one-icon"
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "wigdet-one-content" }, [
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "m-0 text-uppercase font-600 font-secondary text-overflow",
-                      attrs: { title: "Statistics" }
-                    },
-                    [_vm._v("Today visited")]
-                  ),
-                  _vm._v(" "),
-                  _c("h2", [
-                    _vm.todayVisited || _vm.todayVisited === 0
-                      ? _c("span", [_vm._v(_vm._s(_vm.todayVisited))])
-                      : _c("span", [
-                          _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                        ]),
-                    _vm._v(" "),
-                    _c("small", [
-                      _vm.todayVisited > _vm.yesterdayVisited
-                        ? _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-up text-success"
-                            })
-                          ])
-                        : _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-down text-danger"
-                            })
-                          ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted m-0" }, [
-                    _c("b", [_vm._v("Last:")]),
-                    _vm._v(" " + _vm._s(_vm.yesterdayVisited))
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
-              _c("div", { staticClass: "card-box widget-box-one" }, [
-                _c("i", {
-                  staticClass: "mdi mdi-account-convert widget-one-icon"
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "wigdet-one-content" }, [
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "m-0 text-uppercase font-600 font-secondary text-overflow",
-                      attrs: { title: "User Today" }
-                    },
-                    [_vm._v("Weekly visitor")]
-                  ),
-                  _vm._v(" "),
-                  _c("h2", [
-                    _vm.weeklyVisited || _vm.weeklyVisited === 0
-                      ? _c("span", [_vm._v(_vm._s(_vm.weeklyVisited))])
-                      : _c("span", [
-                          _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                        ]),
-                    _vm._v(" "),
-                    _c("small", [
-                      _vm.weeklyVisited > _vm.lastWeekVisited
-                        ? _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-up text-success"
-                            })
-                          ])
-                        : _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-down text-danger"
-                            })
-                          ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted m-0" }, [
-                    _c("b", [_vm._v("Last:")]),
-                    _vm._v(" " + _vm._s(_vm.lastWeekVisited))
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
-              _c("div", { staticClass: "card-box widget-box-one" }, [
-                _c("i", { staticClass: "mdi mdi-layers widget-one-icon" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "wigdet-one-content" }, [
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "m-0 text-uppercase font-600 font-secondary text-overflow",
-                      attrs: { title: "User This Month" }
-                    },
-                    [_vm._v("Monthly visitor")]
-                  ),
-                  _vm._v(" "),
-                  _c("h2", [
-                    _vm.monthlyVisited || _vm.monthlyVisited === 0
-                      ? _c("span", [_vm._v(_vm._s(_vm.monthlyVisited))])
-                      : _c("span", [
-                          _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                        ]),
-                    _vm._v(" "),
-                    _c("small", [
-                      _vm.monthlyVisited > _vm.lastMonthVisited
-                        ? _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-up text-success"
-                            })
-                          ])
-                        : _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-down text-danger"
-                            })
-                          ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted m-0" }, [
-                    _c("b", [_vm._v("Last:")]),
-                    _vm._v(" " + _vm._s(_vm.lastMonthVisited))
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
-              _c("div", { staticClass: "card-box widget-box-one" }, [
-                _c("i", { staticClass: "mdi mdi-av-timer widget-one-icon" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "wigdet-one-content" }, [
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "m-0 text-uppercase font-600 font-secondary text-overflow",
-                      attrs: { title: "Request Per Minute" }
-                    },
-                    [_vm._v("Newly registered")]
-                  ),
-                  _vm._v(" "),
-                  _c("h2", [
-                    _vm.newlyRegistered || _vm.newlyRegistered === 0
-                      ? _c("span", [_vm._v(_vm._s(_vm.newlyRegistered))])
-                      : _c("span", [
-                          _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                        ]),
-                    _vm._v(" "),
-                    _c("small", [
-                      _vm.newlyRegistered > _vm.yesterdayRegistered
-                        ? _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-up text-success"
-                            })
-                          ])
-                        : _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-down text-danger"
-                            })
-                          ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted m-0" }, [
-                    _c("b", [_vm._v("Last:")]),
-                    _vm._v(" " + _vm._s(_vm.yesterdayRegistered))
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
-              _c("div", { staticClass: "card-box widget-box-one" }, [
-                _c("i", {
-                  staticClass: "mdi mdi-account-multiple widget-one-icon"
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "wigdet-one-content" }, [
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "m-0 text-uppercase font-600 font-secondary text-overflow",
-                      attrs: { title: "Total Users" }
-                    },
-                    [_vm._v("Newly subscribed")]
-                  ),
-                  _vm._v(" "),
-                  _c("h2", [
-                    _vm.newlySubscribed || _vm.newlySubscribed === 0
-                      ? _c("span", [_vm._v(_vm._s(_vm.newlySubscribed))])
-                      : _c("span", [
-                          _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                        ]),
-                    _vm._v(" "),
-                    _c("small", [
-                      _vm.newlySubscribed > _vm.yesterdaySubscribed
-                        ? _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-up text-success"
-                            })
-                          ])
-                        : _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-down text-danger"
-                            })
-                          ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted m-0" }, [
-                    _c("b", [_vm._v("Last:")]),
-                    _vm._v(" " + _vm._s(_vm.yesterdaySubscribed))
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
-              _c("div", { staticClass: "card-box widget-box-one" }, [
-                _c("i", { staticClass: "mdi mdi-download widget-one-icon" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "wigdet-one-content" }, [
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "m-0 text-uppercase font-600 font-secondary text-overflow",
-                      attrs: { title: "New Downloads" }
-                    },
-                    [_vm._v("Subscription canceled")]
-                  ),
-                  _vm._v(" "),
-                  _c("h2", [
-                    _vm.subscriptionCanceled || _vm.subscriptionCanceled === 0
-                      ? _c("span", [_vm._v(_vm._s(_vm.subscriptionCanceled))])
-                      : _c("span", [
-                          _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                        ]),
-                    _vm._v(" "),
-                    _c("small", [
-                      _vm.subscriptionCanceled >
-                      _vm.yesterdaySubscriptionCanceled
-                        ? _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-up text-success"
-                            })
-                          ])
-                        : _c("span", [
-                            _c("i", {
-                              staticClass: "mdi mdi-arrow-down text-danger"
-                            })
-                          ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted m-0" }, [
-                    _c("b", [_vm._v("Last:")]),
-                    _vm._v(" " + _vm._s(_vm.yesterdaySubscriptionCanceled))
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", {
-                staticStyle: {
-                  height: "500px",
-                  width: "100%",
-                  "background-color": "#000",
-                  "margin-bottom": "20px"
-                },
-                attrs: { id: "map" }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "selection" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "btn-group btn-group-sm",
-                    attrs: { role: "group", "aria-label": "Basic example" }
-                  },
-                  [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn",
-                        class: _vm.todayMapClass,
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            return _vm.getDataForMap("today")
-                          }
-                        }
-                      },
-                      [_vm._v("Today")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn",
-                        class: _vm.weekMapClass,
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            return _vm.getDataForMap("week")
-                          }
-                        }
-                      },
-                      [_vm._v("This week")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn",
-                        class: _vm.monthMapClass,
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            return _vm.getDataForMap("month")
-                          }
-                        }
-                      },
-                      [_vm._v("This month")]
-                    )
-                  ]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("div", { staticClass: "card-box" }, [
-                _c("h4", { staticClass: "header-title m-t-0 m-b-30" }, [
-                  _vm._v("Mostly visited pages")
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "btn-group btn-group-sm",
-                      attrs: { role: "group", "aria-label": "Basic example" }
-                    },
-                    [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn",
-                          class: _vm.mostVisitedPagesTodayClass,
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              return _vm.getDataForMostVisitedPages("today")
-                            }
-                          }
-                        },
-                        [_vm._v("Today")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn",
-                          class: _vm.mostVisitedPagesWeeklyClass,
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              return _vm.getDataForMostVisitedPages("week")
-                            }
-                          }
-                        },
-                        [_vm._v("This week")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn",
-                          class: _vm.mostVisitedPagesMonthlyClass,
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              return _vm.getDataForMostVisitedPages("month")
-                            }
-                          }
-                        },
-                        [_vm._v("This month")]
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "table-responsive" }, [
-                  _c("table", { staticClass: "table table table-hover m-0" }, [
-                    _c("thead", [
-                      _c("tr", [
-                        _c("th", [_vm._v("No")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Page name")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Visited")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      _vm._l(_vm.mostVisitedPages, function(p) {
-                        return _c("tr", [
-                          _c("td", [_vm._v("1")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(p.page_title))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(p.count))])
-                        ])
-                      }),
-                      0
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("div", { staticClass: "card-box" }, [
-                _c("h4", { staticClass: "header-title m-t-0 m-b-30" }, [
-                  _vm._v("Most visitor countries")
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "btn-group btn-group-sm",
-                      attrs: { role: "group", "aria-label": "Basic example" }
-                    },
-                    [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn",
-                          class: _vm.mostVisitedCountriesTodayClass,
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              return _vm.getDataForMostVisitedCountries("today")
-                            }
-                          }
-                        },
-                        [_vm._v("Today")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn",
-                          class: _vm.mostVisitedCountriesWeeklyClass,
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              return _vm.getDataForMostVisitedCountries("week")
-                            }
-                          }
-                        },
-                        [_vm._v("This week")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn",
-                          class: _vm.mostVisitedCountriesMonthlyClass,
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              return _vm.getDataForMostVisitedCountries("month")
-                            }
-                          }
-                        },
-                        [_vm._v("This month")]
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "table-responsive" }, [
-                  _c("table", { staticClass: "table table table-hover m-0" }, [
-                    _c("thead", [
-                      _c("tr", [
-                        _c("th", [_vm._v("No")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Country")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Visited")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      _vm._l(_vm.mostVisitedCountries, function(p) {
-                        return _c("tr", [
-                          _c("td", [_vm._v("1")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(p.country_code))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(p.count))])
-                        ])
-                      }),
-                      0
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c(
-                "div",
-                { staticClass: "card-box" },
-                [
-                  _c("h1", [_vm._v("Google Analytics reports of visitors")]),
-                  _vm._v(" "),
-                  _c("TrendChart", {
-                    attrs: {
-                      datasets: [
-                        {
-                          data: [10, 50, 20, 100, 40, 60, 80],
-                          smooth: true,
-                          fill: true
-                        }
-                      ],
-                      grid: {
-                        verticalLines: true,
-                        horizontalLines: true
-                      },
-                      labels: {
-                        xLabels: [
-                          "Mon",
-                          "Tue",
-                          "Wed",
-                          "Thu",
-                          "Fri",
-                          "Sat",
-                          "Sun"
-                        ],
-                        yLabels: 5
-                      },
-                      min: 0
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c(
-                "div",
-                { staticClass: "card-box" },
-                [
-                  _c("h1", [_vm._v("Site Analytics reports of subscribers")]),
-                  _vm._v(" "),
-                  _c("TrendChart", {
-                    attrs: {
-                      datasets: [
-                        {
-                          data: _vm.subscribedChartData,
-                          smooth: true,
-                          fill: true
-                        }
-                      ],
-                      grid: {
-                        verticalLines: true,
-                        horizontalLines: true
-                      },
-                      labels: {
-                        xLabels: _vm.subscribedChartDate,
-                        yLabels: 5
-                      },
-                      min: 0
-                    }
-                  })
-                ],
-                1
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _vm.modalActive
-            ? _c(
-                "div",
-                {
-                  staticClass: "modal modal-active",
-                  attrs: {
-                    id: "exampleModalScrollable",
-                    tabindex: "-1",
-                    role: "dialog",
-                    "aria-labelledby": "exampleModalScrollableTitle",
-                    "aria-hidden": "true"
-                  }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "modal-dialog modal-dialog-scrollable",
-                      attrs: { role: "document" }
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "modal-content",
-                          staticStyle: {
-                            "box-shadow": "0px 1px 82px 16px #ccc"
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "modal-header" }, [
-                            _c(
-                              "h5",
-                              {
-                                staticClass: "modal-title",
-                                attrs: { id: "exampleModalScrollableTitle" }
-                              },
-                              [_vm._v("Setup Info")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "close",
-                                attrs: {
-                                  type: "button",
-                                  "data-dismiss": "modal",
-                                  "aria-label": "Close"
-                                }
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  { attrs: { "aria-hidden": "true" } },
-                                  [_vm._v("×")]
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "modal-body" }, [
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-6" }, [
-                                _c("div", { staticClass: "input-group" }, [
-                                  _c(
-                                    "span",
-                                    { staticClass: "input-group-addon" },
-                                    [
-                                      _c("i", {
-                                        staticClass: "fa fa-user-plus"
-                                      })
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.infoForm.first_name,
-                                        expression: "infoForm.first_name"
-                                      }
-                                    ],
-                                    staticClass: "form-control",
-                                    class: _vm.infoFormErrorClass.first_name,
-                                    attrs: {
-                                      type: "text",
-                                      id: "example-input1-group3",
-                                      name: "example-input1-group3",
-                                      placeholder: "First Name"
-                                    },
-                                    domProps: {
-                                      value: _vm.infoForm.first_name
-                                    },
-                                    on: {
-                                      input: function($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.$set(
-                                          _vm.infoForm,
-                                          "first_name",
-                                          $event.target.value
-                                        )
-                                      }
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.infoFormError.first_name))
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-6" }, [
-                                _c("div", { staticClass: "input-group" }, [
-                                  _c(
-                                    "span",
-                                    { staticClass: "input-group-addon" },
-                                    [
-                                      _c("i", {
-                                        staticClass: "fa fa-user-plus"
-                                      })
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.infoForm.last_name,
-                                        expression: "infoForm.last_name"
-                                      }
-                                    ],
-                                    staticClass: "form-control",
-                                    class: _vm.infoFormErrorClass.last_name,
-                                    attrs: {
-                                      type: "text",
-                                      id: "example-input1-group2",
-                                      name: "example-input1-group2",
-                                      placeholder: "Last Name"
-                                    },
-                                    domProps: { value: _vm.infoForm.last_name },
-                                    on: {
-                                      input: function($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.$set(
-                                          _vm.infoForm,
-                                          "last_name",
-                                          $event.target.value
-                                        )
-                                      }
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.infoFormError.last_name))
-                                  ])
-                                ])
-                              ])
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "modal-footer" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-secondary",
-                                attrs: {
-                                  type: "button",
-                                  "data-dismiss": "modal"
-                                },
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.hideModal($event)
-                                  }
-                                }
-                              },
-                              [_vm._v("Close")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-primary",
-                                attrs: { type: "button" },
-                                on: { click: _vm.saveName }
-                              },
-                              [_vm._v("Save changes")]
-                            )
-                          ])
-                        ]
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _vm._e()
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./resources/js/Pages/Dashboard.vue":
 /*!******************************************!*\
   !*** ./resources/js/Pages/Dashboard.vue ***!
@@ -1993,8 +1292,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_097ba13b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Dashboard.vue?vue&type=style&index=0&id=097ba13b&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard.vue?vue&type=style&index=0&id=097ba13b&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_097ba13b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_097ba13b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_097ba13b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_097ba13b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_097ba13b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_097ba13b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_097ba13b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
@@ -2007,10 +1306,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Dashboard.vue?vue&type=template&id=097ba13b&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../node_modules/vue-loader/lib??vue-loader-options!./Dashboard.vue?vue&type=template&id=097ba13b&scoped=true& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

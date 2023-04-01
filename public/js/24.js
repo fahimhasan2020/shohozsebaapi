@@ -11,127 +11,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inc_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../inc/Layout */ "./resources/js/Pages/inc/Layout.vue");
 /* harmony import */ var _Mixins_Dashboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Mixins/Dashboard */ "./resources/js/Mixins/Dashboard.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -176,7 +55,8 @@ __webpack_require__.r(__webpack_exports__);
       return this.roleForm.slug;
     }
   },
-  created: function created() {//
+  created: function created() {
+    //
   },
   mounted: function mounted() {
     this.roleForm.id = this.id;
@@ -188,9 +68,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     deleteRole: function deleteRole() {
       var _this = this;
-
       this.$confirm("Are you sure to delete the role?", "Warning", "warning").then(function () {
-        _this.$inertia["delete"]('/admins/admin-roles/' + _this.id).then(function () {//
+        _this.$inertia["delete"]('/admins/admin-roles/' + _this.id).then(function () {
+          //
         });
       });
     },
@@ -201,11 +81,9 @@ __webpack_require__.r(__webpack_exports__);
             this.multiplePermissions.push(this.permissions[mo].name);
           }
         }
-
         if (this.permissions[mo].type === 'custom') {
           var arraya = this.permissions[mo].custom.split(', ');
           var tessa = [];
-
           for (var ii = 0; ii < arraya.length; ii++) {
             if (this.selectedPermissions.includes(this.permissions[mo].name + '.' + arraya[ii])) {
               tessa.push(1);
@@ -213,7 +91,6 @@ __webpack_require__.r(__webpack_exports__);
               tessa.push(-1);
             }
           }
-
           if (tessa.indexOf(-1) === -1) {
             this.multiplePermissions.push(this.permissions[mo].name);
           }
@@ -227,7 +104,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     customLoopRemove: function customLoopRemove(value, index, array) {
       var customIndex = this.selectedPermissions.indexOf(this.customConCat + '.' + value);
-
       if (customIndex !== -1) {
         this.selectedPermissions.splice(customIndex, 1);
       }
@@ -256,15 +132,12 @@ __webpack_require__.r(__webpack_exports__);
           if (!this.selectedPermissions.includes(per.name + '.' + 'view')) {
             this.selectedPermissions.push(per.name + '.' + 'view');
           }
-
           if (!this.selectedPermissions.includes(per.name + '.' + 'add')) {
             this.selectedPermissions.push(per.name + '.' + 'add');
           }
-
           if (!this.selectedPermissions.includes(per.name + '.' + 'edit')) {
             this.selectedPermissions.push(per.name + '.' + 'edit');
           }
-
           if (!this.selectedPermissions.includes(per.name + '.' + 'delete')) {
             this.selectedPermissions.push(per.name + '.' + 'delete');
           }
@@ -299,7 +172,6 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           this.roleFormError.name = '';
         }
-
         if (this.roleForm.slug === '') {
           this.roleFormError.slug = 'Slug required';
         } else {
@@ -309,7 +181,8 @@ __webpack_require__.r(__webpack_exports__);
         this.roleForm.permissions = this.selectedPermissions;
         this.permissions.forEach(this.listAll);
         this.roleForm.alls = this.allPermissions;
-        this.$inertia.put('/admins/admin-roles/' + this.roleForm.id, this.roleForm).then(function () {//
+        this.$inertia.put('/admins/admin-roles/' + this.roleForm.id, this.roleForm).then(function () {
+          //
         });
       }
     },
@@ -319,7 +192,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     importSubmit: function importSubmit() {
       var _this2 = this;
-
       var formData = new FormData();
       formData.append('file', this.importFile);
       this.$inertia.post('/admins/admin-roles/excel/import', formData).then(function () {
@@ -337,7 +209,6 @@ __webpack_require__.r(__webpack_exports__);
         }
       } else {
         var mother = this.multiplePermissions.indexOf(name);
-
         if (mother !== -1) {
           this.multiplePermissions.splice(mother, 1);
         }
@@ -345,20 +216,16 @@ __webpack_require__.r(__webpack_exports__);
     },
     childToMotherCustom: function childToMotherCustom(element) {
       var array = element.custom.split(', ');
-
       for (var i = 0; i < array.length; i++) {
         if (this.selectedPermissions.indexOf(element.name + '.' + array[i]) === -1) {
           var position = this.multiplePermissions.indexOf(element.name);
-
           if (position !== -1) {
             this.multiplePermissions.splice(position, 1);
           }
-
           array = [];
           return;
         }
       }
-
       if (!this.multiplePermissions.includes(element.name)) {
         array = [];
         this.multiplePermissions.push(element.name);
@@ -366,6 +233,461 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Users/Admin/RoleEdit.vue?vue&type=template&id=b0b769a0&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Users/Admin/RoleEdit.vue?vue&type=template&id=b0b769a0&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("layout", {
+    attrs: {
+      title: "Admin | Role Edit"
+    }
+  }, [_c("div", {
+    staticClass: "content-page"
+  }, [_c("div", {
+    staticClass: "content"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-xs-12"
+  }, [_c("div", {
+    staticClass: "page-title-box"
+  }, [_c("h4", {
+    staticClass: "page-title"
+  }, [_vm._v("Dashboard")]), _vm._v(" "), _c("ol", {
+    staticClass: "breadcrumb p-0 m-0"
+  }, [_c("li", [_c("inertia-link", {
+    attrs: {
+      href: "/admins/dashboard"
+    }
+  }, [_vm._v("Dashboard")])], 1), _vm._v(" "), _c("li", [_c("inertia-link", {
+    attrs: {
+      href: "/admins/admin"
+    }
+  }, [_vm._v("Admin")])], 1), _vm._v(" "), _c("li", {
+    attrs: {
+      CLASS: "active"
+    }
+  }, [_vm._v("\n                                    Role Add\n                                ")])]), _vm._v(" "), _c("div", {
+    staticClass: "clearfix"
+  })])])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-4"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h4", {
+    staticClass: "header-title m-t-0 m-b-30"
+  }, [_vm._v("Deletes Role")]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("button", {
+    staticClass: "btn btn-lg btn-block btn-danger",
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.deleteRole.apply(null, arguments);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "fa fa-trash"
+  }), _vm._v("Delete")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-8"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h4", {
+    staticClass: "header-title m-t-0 m-b-30"
+  }, [_vm._v("Edit Role")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.roleForm.name,
+      expression: "roleForm.name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      name: "name",
+      placeholder: "Add Name"
+    },
+    domProps: {
+      value: _vm.roleForm.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.roleForm, "name", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.roleFormError.name))])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.replaced,
+      expression: "replaced"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      name: "slug",
+      placeholder: "Add Slug"
+    },
+    domProps: {
+      value: _vm.replaced
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.replaced = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.roleFormError.slug))])]), _vm._v(" "), _vm._l(_vm.permissions, function (p) {
+    return _c("div", {
+      staticClass: "col-md-12"
+    }, [_c("div", {
+      staticClass: "row"
+    }, [_c("div", {
+      staticClass: "col-md-12"
+    }, [_c("div", {
+      staticClass: "checkbox checkbox-success"
+    }, [p.type !== "single" ? _c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.multiplePermissions,
+        expression: "multiplePermissions"
+      }],
+      attrs: {
+        id: p.name,
+        type: "checkbox"
+      },
+      domProps: {
+        value: p.name,
+        checked: Array.isArray(_vm.multiplePermissions) ? _vm._i(_vm.multiplePermissions, p.name) > -1 : _vm.multiplePermissions
+      },
+      on: {
+        change: [function ($event) {
+          var $$a = _vm.multiplePermissions,
+            $$el = $event.target,
+            $$c = $$el.checked ? true : false;
+          if (Array.isArray($$a)) {
+            var $$v = p.name,
+              $$i = _vm._i($$a, $$v);
+            if ($$el.checked) {
+              $$i < 0 && (_vm.multiplePermissions = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.multiplePermissions = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.multiplePermissions = $$c;
+          }
+        }, function ($event) {
+          return _vm.checkType(p);
+        }]
+      }
+    }) : _c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.selectedPermissions,
+        expression: "selectedPermissions"
+      }],
+      attrs: {
+        id: p.name,
+        type: "checkbox"
+      },
+      domProps: {
+        value: p.name,
+        checked: Array.isArray(_vm.selectedPermissions) ? _vm._i(_vm.selectedPermissions, p.name) > -1 : _vm.selectedPermissions
+      },
+      on: {
+        change: function change($event) {
+          var $$a = _vm.selectedPermissions,
+            $$el = $event.target,
+            $$c = $$el.checked ? true : false;
+          if (Array.isArray($$a)) {
+            var $$v = p.name,
+              $$i = _vm._i($$a, $$v);
+            if ($$el.checked) {
+              $$i < 0 && (_vm.selectedPermissions = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.selectedPermissions = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.selectedPermissions = $$c;
+          }
+        }
+      }
+    }), _vm._v(" "), p.type !== "single" ? _c("label", {
+      attrs: {
+        "for": p.name
+      }
+    }, [_vm._v("\n                                                    " + _vm._s(p.name) + "\n                                                ")]) : _c("label", {
+      attrs: {
+        "for": p.name
+      }
+    }, [_vm._v("\n                                                    " + _vm._s(p.name) + "\n                                                ")])])]), _vm._v(" "), _c("div", {
+      staticClass: "col-md-6"
+    }), _vm._v(" "), p.type === "resource" ? _c("div", {
+      staticClass: "col-md-6"
+    }, [_c("div", {
+      staticClass: "col-md-12"
+    }, [_c("div", {
+      staticClass: "checkbox checkbox-success"
+    }, [_c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.selectedPermissions,
+        expression: "selectedPermissions"
+      }],
+      attrs: {
+        id: p.name + "view",
+        type: "checkbox"
+      },
+      domProps: {
+        value: p.name + "." + "view",
+        checked: Array.isArray(_vm.selectedPermissions) ? _vm._i(_vm.selectedPermissions, p.name + "." + "view") > -1 : _vm.selectedPermissions
+      },
+      on: {
+        change: [function ($event) {
+          var $$a = _vm.selectedPermissions,
+            $$el = $event.target,
+            $$c = $$el.checked ? true : false;
+          if (Array.isArray($$a)) {
+            var $$v = p.name + "." + "view",
+              $$i = _vm._i($$a, $$v);
+            if ($$el.checked) {
+              $$i < 0 && (_vm.selectedPermissions = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.selectedPermissions = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.selectedPermissions = $$c;
+          }
+        }, function ($event) {
+          return _vm.childToMother(p.name);
+        }]
+      }
+    }), _vm._v(" "), _c("label", {
+      attrs: {
+        "for": p.name + "view"
+      }
+    }, [_vm._v("\n                                                        View\n                                                    ")])]), _vm._v(" "), _c("div", {
+      staticClass: "checkbox checkbox-success"
+    }, [_c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.selectedPermissions,
+        expression: "selectedPermissions"
+      }],
+      attrs: {
+        id: p.name + "add",
+        type: "checkbox"
+      },
+      domProps: {
+        value: p.name + "." + "add",
+        checked: Array.isArray(_vm.selectedPermissions) ? _vm._i(_vm.selectedPermissions, p.name + "." + "add") > -1 : _vm.selectedPermissions
+      },
+      on: {
+        change: [function ($event) {
+          var $$a = _vm.selectedPermissions,
+            $$el = $event.target,
+            $$c = $$el.checked ? true : false;
+          if (Array.isArray($$a)) {
+            var $$v = p.name + "." + "add",
+              $$i = _vm._i($$a, $$v);
+            if ($$el.checked) {
+              $$i < 0 && (_vm.selectedPermissions = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.selectedPermissions = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.selectedPermissions = $$c;
+          }
+        }, function ($event) {
+          return _vm.childToMother(p.name);
+        }]
+      }
+    }), _vm._v(" "), _c("label", {
+      attrs: {
+        "for": p.name + "add"
+      }
+    }, [_vm._v("\n                                                        Add\n                                                    ")])]), _vm._v(" "), _c("div", {
+      staticClass: "checkbox checkbox-success"
+    }, [_c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.selectedPermissions,
+        expression: "selectedPermissions"
+      }],
+      attrs: {
+        id: p.name + "edit",
+        type: "checkbox"
+      },
+      domProps: {
+        value: p.name + "." + "edit",
+        checked: Array.isArray(_vm.selectedPermissions) ? _vm._i(_vm.selectedPermissions, p.name + "." + "edit") > -1 : _vm.selectedPermissions
+      },
+      on: {
+        change: [function ($event) {
+          var $$a = _vm.selectedPermissions,
+            $$el = $event.target,
+            $$c = $$el.checked ? true : false;
+          if (Array.isArray($$a)) {
+            var $$v = p.name + "." + "edit",
+              $$i = _vm._i($$a, $$v);
+            if ($$el.checked) {
+              $$i < 0 && (_vm.selectedPermissions = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.selectedPermissions = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.selectedPermissions = $$c;
+          }
+        }, function ($event) {
+          return _vm.childToMother(p.name);
+        }]
+      }
+    }), _vm._v(" "), _c("label", {
+      attrs: {
+        "for": p.name + "edit"
+      }
+    }, [_vm._v("\n                                                        Update\n                                                    ")])]), _vm._v(" "), _c("div", {
+      staticClass: "checkbox checkbox-success"
+    }, [_c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.selectedPermissions,
+        expression: "selectedPermissions"
+      }],
+      attrs: {
+        id: p.name + "delete",
+        type: "checkbox"
+      },
+      domProps: {
+        value: p.name + "." + "delete",
+        checked: Array.isArray(_vm.selectedPermissions) ? _vm._i(_vm.selectedPermissions, p.name + "." + "delete") > -1 : _vm.selectedPermissions
+      },
+      on: {
+        change: [function ($event) {
+          var $$a = _vm.selectedPermissions,
+            $$el = $event.target,
+            $$c = $$el.checked ? true : false;
+          if (Array.isArray($$a)) {
+            var $$v = p.name + "." + "delete",
+              $$i = _vm._i($$a, $$v);
+            if ($$el.checked) {
+              $$i < 0 && (_vm.selectedPermissions = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.selectedPermissions = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.selectedPermissions = $$c;
+          }
+        }, function ($event) {
+          return _vm.childToMother(p.name);
+        }]
+      }
+    }), _vm._v(" "), _c("label", {
+      attrs: {
+        "for": p.name + "delete"
+      }
+    }, [_vm._v("\n                                                        Delete\n                                                    ")])])])]) : p.type === "custom" ? _c("div", {
+      staticClass: "col-md-6"
+    }, [p.custom !== null ? _c("div", {
+      staticClass: "col-md-12"
+    }, _vm._l(p.custom.split(", "), function (pc) {
+      return _c("div", {
+        staticClass: "checkbox checkbox-success"
+      }, [_c("input", {
+        directives: [{
+          name: "model",
+          rawName: "v-model",
+          value: _vm.selectedPermissions,
+          expression: "selectedPermissions"
+        }],
+        attrs: {
+          id: p.name + pc,
+          type: "checkbox"
+        },
+        domProps: {
+          value: p.name + "." + pc,
+          checked: Array.isArray(_vm.selectedPermissions) ? _vm._i(_vm.selectedPermissions, p.name + "." + pc) > -1 : _vm.selectedPermissions
+        },
+        on: {
+          change: [function ($event) {
+            var $$a = _vm.selectedPermissions,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false;
+            if (Array.isArray($$a)) {
+              var $$v = p.name + "." + pc,
+                $$i = _vm._i($$a, $$v);
+              if ($$el.checked) {
+                $$i < 0 && (_vm.selectedPermissions = $$a.concat([$$v]));
+              } else {
+                $$i > -1 && (_vm.selectedPermissions = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+              }
+            } else {
+              _vm.selectedPermissions = $$c;
+            }
+          }, function ($event) {
+            return _vm.childToMotherCustom(p);
+          }]
+        }
+      }), _vm._v(" "), _c("label", {
+        attrs: {
+          "for": p.name + pc
+        }
+      }, [_vm._v("\n                                                        " + _vm._s(pc) + "\n                                                    ")])]);
+    }), 0) : _vm._e()]) : _vm._e(), _vm._v(" "), _c("hr")])]);
+  }), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12"
+  }, [_c("button", {
+    staticClass: "btn btn-primary btn-block btn-lg",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.roleAdd
+    }
+  }, [_c("i", {
+    staticClass: "fa fa-save"
+  }), _vm._v(" Save role")])])], 2)])])])])])])]);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
 
 /***/ }),
 
@@ -437,756 +759,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Users/Admin/RoleEdit.vue?vue&type=template&id=b0b769a0&scoped=true&":
-/*!******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Users/Admin/RoleEdit.vue?vue&type=template&id=b0b769a0&scoped=true& ***!
-  \******************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { title: "Admin | Role Edit" } }, [
-    _c("div", { staticClass: "content-page" }, [
-      _c("div", { staticClass: "content" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xs-12" }, [
-              _c("div", { staticClass: "page-title-box" }, [
-                _c("h4", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
-                _vm._v(" "),
-                _c("ol", { staticClass: "breadcrumb p-0 m-0" }, [
-                  _c(
-                    "li",
-                    [
-                      _c(
-                        "inertia-link",
-                        { attrs: { href: "/admins/dashboard" } },
-                        [_vm._v("Dashboard")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "li",
-                    [
-                      _c("inertia-link", { attrs: { href: "/admins/admin" } }, [
-                        _vm._v("Admin")
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("li", { attrs: { CLASS: "active" } }, [
-                    _vm._v(
-                      "\n                                    Role Add\n                                "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card-box" }, [
-                _c("h4", { staticClass: "header-title m-t-0 m-b-30" }, [
-                  _vm._v("Deletes Role")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-lg btn-block btn-danger",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.deleteRole($event)
-                          }
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "fa fa-trash" }),
-                        _vm._v("Delete")
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
-              _c("div", { staticClass: "card-box" }, [
-                _c("h4", { staticClass: "header-title m-t-0 m-b-30" }, [
-                  _vm._v("Edit Role")
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "row" },
-                  [
-                    _c("div", { staticClass: "col-md-6" }, [
-                      _c("div", { staticClass: "form-group" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.roleForm.name,
-                              expression: "roleForm.name"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            name: "name",
-                            placeholder: "Add Name"
-                          },
-                          domProps: { value: _vm.roleForm.name },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.roleForm,
-                                "name",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "text-danger" }, [
-                          _vm._v(_vm._s(_vm.roleFormError.name))
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.replaced,
-                            expression: "replaced"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          name: "slug",
-                          placeholder: "Add Slug"
-                        },
-                        domProps: { value: _vm.replaced },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.replaced = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "text-danger" }, [
-                        _vm._v(_vm._s(_vm.roleFormError.slug))
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.permissions, function(p) {
-                      return _c("div", { staticClass: "col-md-12" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-12" }, [
-                            _c(
-                              "div",
-                              { staticClass: "checkbox checkbox-success" },
-                              [
-                                p.type !== "single"
-                                  ? _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.multiplePermissions,
-                                          expression: "multiplePermissions"
-                                        }
-                                      ],
-                                      attrs: { id: p.name, type: "checkbox" },
-                                      domProps: {
-                                        value: p.name,
-                                        checked: Array.isArray(
-                                          _vm.multiplePermissions
-                                        )
-                                          ? _vm._i(
-                                              _vm.multiplePermissions,
-                                              p.name
-                                            ) > -1
-                                          : _vm.multiplePermissions
-                                      },
-                                      on: {
-                                        change: [
-                                          function($event) {
-                                            var $$a = _vm.multiplePermissions,
-                                              $$el = $event.target,
-                                              $$c = $$el.checked ? true : false
-                                            if (Array.isArray($$a)) {
-                                              var $$v = p.name,
-                                                $$i = _vm._i($$a, $$v)
-                                              if ($$el.checked) {
-                                                $$i < 0 &&
-                                                  (_vm.multiplePermissions = $$a.concat(
-                                                    [$$v]
-                                                  ))
-                                              } else {
-                                                $$i > -1 &&
-                                                  (_vm.multiplePermissions = $$a
-                                                    .slice(0, $$i)
-                                                    .concat($$a.slice($$i + 1)))
-                                              }
-                                            } else {
-                                              _vm.multiplePermissions = $$c
-                                            }
-                                          },
-                                          function($event) {
-                                            return _vm.checkType(p)
-                                          }
-                                        ]
-                                      }
-                                    })
-                                  : _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.selectedPermissions,
-                                          expression: "selectedPermissions"
-                                        }
-                                      ],
-                                      attrs: { id: p.name, type: "checkbox" },
-                                      domProps: {
-                                        value: p.name,
-                                        checked: Array.isArray(
-                                          _vm.selectedPermissions
-                                        )
-                                          ? _vm._i(
-                                              _vm.selectedPermissions,
-                                              p.name
-                                            ) > -1
-                                          : _vm.selectedPermissions
-                                      },
-                                      on: {
-                                        change: function($event) {
-                                          var $$a = _vm.selectedPermissions,
-                                            $$el = $event.target,
-                                            $$c = $$el.checked ? true : false
-                                          if (Array.isArray($$a)) {
-                                            var $$v = p.name,
-                                              $$i = _vm._i($$a, $$v)
-                                            if ($$el.checked) {
-                                              $$i < 0 &&
-                                                (_vm.selectedPermissions = $$a.concat(
-                                                  [$$v]
-                                                ))
-                                            } else {
-                                              $$i > -1 &&
-                                                (_vm.selectedPermissions = $$a
-                                                  .slice(0, $$i)
-                                                  .concat($$a.slice($$i + 1)))
-                                            }
-                                          } else {
-                                            _vm.selectedPermissions = $$c
-                                          }
-                                        }
-                                      }
-                                    }),
-                                _vm._v(" "),
-                                p.type !== "single"
-                                  ? _c("label", { attrs: { for: p.name } }, [
-                                      _vm._v(
-                                        "\n                                                    " +
-                                          _vm._s(p.name) +
-                                          "\n                                                "
-                                      )
-                                    ])
-                                  : _c("label", { attrs: { for: p.name } }, [
-                                      _vm._v(
-                                        "\n                                                    " +
-                                          _vm._s(p.name) +
-                                          "\n                                                "
-                                      )
-                                    ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }),
-                          _vm._v(" "),
-                          p.type === "resource"
-                            ? _c("div", { staticClass: "col-md-6" }, [
-                                _c("div", { staticClass: "col-md-12" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "checkbox checkbox-success"
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.selectedPermissions,
-                                            expression: "selectedPermissions"
-                                          }
-                                        ],
-                                        attrs: {
-                                          id: p.name + "view",
-                                          type: "checkbox"
-                                        },
-                                        domProps: {
-                                          value: p.name + "." + "view",
-                                          checked: Array.isArray(
-                                            _vm.selectedPermissions
-                                          )
-                                            ? _vm._i(
-                                                _vm.selectedPermissions,
-                                                p.name + "." + "view"
-                                              ) > -1
-                                            : _vm.selectedPermissions
-                                        },
-                                        on: {
-                                          change: [
-                                            function($event) {
-                                              var $$a = _vm.selectedPermissions,
-                                                $$el = $event.target,
-                                                $$c = $$el.checked
-                                                  ? true
-                                                  : false
-                                              if (Array.isArray($$a)) {
-                                                var $$v = p.name + "." + "view",
-                                                  $$i = _vm._i($$a, $$v)
-                                                if ($$el.checked) {
-                                                  $$i < 0 &&
-                                                    (_vm.selectedPermissions = $$a.concat(
-                                                      [$$v]
-                                                    ))
-                                                } else {
-                                                  $$i > -1 &&
-                                                    (_vm.selectedPermissions = $$a
-                                                      .slice(0, $$i)
-                                                      .concat(
-                                                        $$a.slice($$i + 1)
-                                                      ))
-                                                }
-                                              } else {
-                                                _vm.selectedPermissions = $$c
-                                              }
-                                            },
-                                            function($event) {
-                                              return _vm.childToMother(p.name)
-                                            }
-                                          ]
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "label",
-                                        { attrs: { for: p.name + "view" } },
-                                        [
-                                          _vm._v(
-                                            "\n                                                        View\n                                                    "
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "checkbox checkbox-success"
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.selectedPermissions,
-                                            expression: "selectedPermissions"
-                                          }
-                                        ],
-                                        attrs: {
-                                          id: p.name + "add",
-                                          type: "checkbox"
-                                        },
-                                        domProps: {
-                                          value: p.name + "." + "add",
-                                          checked: Array.isArray(
-                                            _vm.selectedPermissions
-                                          )
-                                            ? _vm._i(
-                                                _vm.selectedPermissions,
-                                                p.name + "." + "add"
-                                              ) > -1
-                                            : _vm.selectedPermissions
-                                        },
-                                        on: {
-                                          change: [
-                                            function($event) {
-                                              var $$a = _vm.selectedPermissions,
-                                                $$el = $event.target,
-                                                $$c = $$el.checked
-                                                  ? true
-                                                  : false
-                                              if (Array.isArray($$a)) {
-                                                var $$v = p.name + "." + "add",
-                                                  $$i = _vm._i($$a, $$v)
-                                                if ($$el.checked) {
-                                                  $$i < 0 &&
-                                                    (_vm.selectedPermissions = $$a.concat(
-                                                      [$$v]
-                                                    ))
-                                                } else {
-                                                  $$i > -1 &&
-                                                    (_vm.selectedPermissions = $$a
-                                                      .slice(0, $$i)
-                                                      .concat(
-                                                        $$a.slice($$i + 1)
-                                                      ))
-                                                }
-                                              } else {
-                                                _vm.selectedPermissions = $$c
-                                              }
-                                            },
-                                            function($event) {
-                                              return _vm.childToMother(p.name)
-                                            }
-                                          ]
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "label",
-                                        { attrs: { for: p.name + "add" } },
-                                        [
-                                          _vm._v(
-                                            "\n                                                        Add\n                                                    "
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "checkbox checkbox-success"
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.selectedPermissions,
-                                            expression: "selectedPermissions"
-                                          }
-                                        ],
-                                        attrs: {
-                                          id: p.name + "edit",
-                                          type: "checkbox"
-                                        },
-                                        domProps: {
-                                          value: p.name + "." + "edit",
-                                          checked: Array.isArray(
-                                            _vm.selectedPermissions
-                                          )
-                                            ? _vm._i(
-                                                _vm.selectedPermissions,
-                                                p.name + "." + "edit"
-                                              ) > -1
-                                            : _vm.selectedPermissions
-                                        },
-                                        on: {
-                                          change: [
-                                            function($event) {
-                                              var $$a = _vm.selectedPermissions,
-                                                $$el = $event.target,
-                                                $$c = $$el.checked
-                                                  ? true
-                                                  : false
-                                              if (Array.isArray($$a)) {
-                                                var $$v = p.name + "." + "edit",
-                                                  $$i = _vm._i($$a, $$v)
-                                                if ($$el.checked) {
-                                                  $$i < 0 &&
-                                                    (_vm.selectedPermissions = $$a.concat(
-                                                      [$$v]
-                                                    ))
-                                                } else {
-                                                  $$i > -1 &&
-                                                    (_vm.selectedPermissions = $$a
-                                                      .slice(0, $$i)
-                                                      .concat(
-                                                        $$a.slice($$i + 1)
-                                                      ))
-                                                }
-                                              } else {
-                                                _vm.selectedPermissions = $$c
-                                              }
-                                            },
-                                            function($event) {
-                                              return _vm.childToMother(p.name)
-                                            }
-                                          ]
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "label",
-                                        { attrs: { for: p.name + "edit" } },
-                                        [
-                                          _vm._v(
-                                            "\n                                                        Update\n                                                    "
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "checkbox checkbox-success"
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.selectedPermissions,
-                                            expression: "selectedPermissions"
-                                          }
-                                        ],
-                                        attrs: {
-                                          id: p.name + "delete",
-                                          type: "checkbox"
-                                        },
-                                        domProps: {
-                                          value: p.name + "." + "delete",
-                                          checked: Array.isArray(
-                                            _vm.selectedPermissions
-                                          )
-                                            ? _vm._i(
-                                                _vm.selectedPermissions,
-                                                p.name + "." + "delete"
-                                              ) > -1
-                                            : _vm.selectedPermissions
-                                        },
-                                        on: {
-                                          change: [
-                                            function($event) {
-                                              var $$a = _vm.selectedPermissions,
-                                                $$el = $event.target,
-                                                $$c = $$el.checked
-                                                  ? true
-                                                  : false
-                                              if (Array.isArray($$a)) {
-                                                var $$v =
-                                                    p.name + "." + "delete",
-                                                  $$i = _vm._i($$a, $$v)
-                                                if ($$el.checked) {
-                                                  $$i < 0 &&
-                                                    (_vm.selectedPermissions = $$a.concat(
-                                                      [$$v]
-                                                    ))
-                                                } else {
-                                                  $$i > -1 &&
-                                                    (_vm.selectedPermissions = $$a
-                                                      .slice(0, $$i)
-                                                      .concat(
-                                                        $$a.slice($$i + 1)
-                                                      ))
-                                                }
-                                              } else {
-                                                _vm.selectedPermissions = $$c
-                                              }
-                                            },
-                                            function($event) {
-                                              return _vm.childToMother(p.name)
-                                            }
-                                          ]
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "label",
-                                        { attrs: { for: p.name + "delete" } },
-                                        [
-                                          _vm._v(
-                                            "\n                                                        Delete\n                                                    "
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ])
-                              ])
-                            : p.type === "custom"
-                            ? _c("div", { staticClass: "col-md-6" }, [
-                                p.custom !== null
-                                  ? _c(
-                                      "div",
-                                      { staticClass: "col-md-12" },
-                                      _vm._l(p.custom.split(", "), function(
-                                        pc
-                                      ) {
-                                        return _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "checkbox checkbox-success"
-                                          },
-                                          [
-                                            _c("input", {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value:
-                                                    _vm.selectedPermissions,
-                                                  expression:
-                                                    "selectedPermissions"
-                                                }
-                                              ],
-                                              attrs: {
-                                                id: p.name + pc,
-                                                type: "checkbox"
-                                              },
-                                              domProps: {
-                                                value: p.name + "." + pc,
-                                                checked: Array.isArray(
-                                                  _vm.selectedPermissions
-                                                )
-                                                  ? _vm._i(
-                                                      _vm.selectedPermissions,
-                                                      p.name + "." + pc
-                                                    ) > -1
-                                                  : _vm.selectedPermissions
-                                              },
-                                              on: {
-                                                change: [
-                                                  function($event) {
-                                                    var $$a =
-                                                        _vm.selectedPermissions,
-                                                      $$el = $event.target,
-                                                      $$c = $$el.checked
-                                                        ? true
-                                                        : false
-                                                    if (Array.isArray($$a)) {
-                                                      var $$v =
-                                                          p.name + "." + pc,
-                                                        $$i = _vm._i($$a, $$v)
-                                                      if ($$el.checked) {
-                                                        $$i < 0 &&
-                                                          (_vm.selectedPermissions = $$a.concat(
-                                                            [$$v]
-                                                          ))
-                                                      } else {
-                                                        $$i > -1 &&
-                                                          (_vm.selectedPermissions = $$a
-                                                            .slice(0, $$i)
-                                                            .concat(
-                                                              $$a.slice($$i + 1)
-                                                            ))
-                                                      }
-                                                    } else {
-                                                      _vm.selectedPermissions = $$c
-                                                    }
-                                                  },
-                                                  function($event) {
-                                                    return _vm.childToMotherCustom(
-                                                      p
-                                                    )
-                                                  }
-                                                ]
-                                              }
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "label",
-                                              { attrs: { for: p.name + pc } },
-                                              [
-                                                _vm._v(
-                                                  "\n                                                        " +
-                                                    _vm._s(pc) +
-                                                    "\n                                                    "
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      }),
-                                      0
-                                    )
-                                  : _vm._e()
-                              ])
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _c("hr")
-                        ])
-                      ])
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-12" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-primary btn-block btn-lg",
-                          attrs: { type: "button" },
-                          on: { click: _vm.roleAdd }
-                        },
-                        [
-                          _c("i", { staticClass: "fa fa-save" }),
-                          _vm._v(" Save role")
-                        ]
-                      )
-                    ])
-                  ],
-                  2
-                )
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./resources/js/Pages/Users/Admin/RoleEdit.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/Pages/Users/Admin/RoleEdit.vue ***!
@@ -1251,8 +823,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_style_index_0_id_b0b769a0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RoleEdit.vue?vue&type=style&index=0&id=b0b769a0&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Users/Admin/RoleEdit.vue?vue&type=style&index=0&id=b0b769a0&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_style_index_0_id_b0b769a0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_style_index_0_id_b0b769a0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_style_index_0_id_b0b769a0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_style_index_0_id_b0b769a0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_style_index_0_id_b0b769a0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_style_index_0_id_b0b769a0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_style_index_0_id_b0b769a0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
@@ -1265,10 +837,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_template_id_b0b769a0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RoleEdit.vue?vue&type=template&id=b0b769a0&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Users/Admin/RoleEdit.vue?vue&type=template&id=b0b769a0&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_template_id_b0b769a0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_template_id_b0b769a0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RoleEdit.vue?vue&type=template&id=b0b769a0&scoped=true& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Users/Admin/RoleEdit.vue?vue&type=template&id=b0b769a0&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_template_id_b0b769a0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_template_id_b0b769a0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_RoleEdit_vue_vue_type_template_id_b0b769a0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

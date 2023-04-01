@@ -11,166 +11,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inc_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../inc/Layout */ "./resources/js/Pages/inc/Layout.vue");
 /* harmony import */ var _Mixins_Dashboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Mixins/Dashboard */ "./resources/js/Mixins/Dashboard.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -179,16 +19,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   mixins: [_Mixins_Dashboard__WEBPACK_IMPORTED_MODULE_1__["default"]],
   data: function data() {
-    return {//
+    return {
+      //
     };
   },
-  props: {//
+  props: {
+    //
   },
-  computed: {//
+  computed: {
+    //
   },
-  created: function created() {//
+  created: function created() {
+    //
   },
-  mounted: function mounted() {//
+  mounted: function mounted() {
+    //
   },
   methods: {
     enableTrustedBrowser: function enableTrustedBrowser(data) {
@@ -200,13 +45,321 @@ __webpack_require__.r(__webpack_exports__);
     },
     deactivate: function deactivate() {
       var _this = this;
-
       this.$confirm("If you deactivate account , other admins can not message you or view your profile. You can reactivate by login again", "Warning", "warning").then(function () {
         _this.$inertia.post('/admins/account/deactivate');
       });
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Profile/AccountSettings.vue?vue&type=template&id=0cc10e51&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Profile/AccountSettings.vue?vue&type=template&id=0cc10e51&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("layout", {
+    attrs: {
+      title: "Admin | Account settings"
+    }
+  }, [_c("div", {
+    staticClass: "content-page"
+  }, [_c("div", {
+    staticClass: "content"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-xs-12"
+  }, [_c("div", {
+    staticClass: "page-title-box"
+  }, [_c("h4", {
+    staticClass: "page-title"
+  }, [_vm._v("Dashboard")]), _vm._v(" "), _c("ol", {
+    staticClass: "breadcrumb p-0 m-0"
+  }, [_c("li", {
+    attrs: {
+      CLASS: "active"
+    }
+  }, [_vm._v("\n                                    Account settings\n                                ")])]), _vm._v(" "), _c("div", {
+    staticClass: "clearfix"
+  })])])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h4", {
+    staticClass: "text-center text-primary"
+  }, [_vm._v("Notification settings")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "checkbox checkbox-success"
+  }, [_c("input", {
+    attrs: {
+      id: "notification-sound",
+      type: "checkbox"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "notification-sound"
+    }
+  }, [_vm._v("\n                                           Notification sound\n                                        ")])]), _vm._v(" "), _c("div", {
+    staticClass: "checkbox checkbox-success"
+  }, [_c("input", {
+    attrs: {
+      id: "mail-recieve",
+      type: "checkbox"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "mail-recieve"
+    }
+  }, [_vm._v("\n                                            Opt out of receiving mail\n                                        ")])]), _vm._v(" "), _c("div", {
+    staticClass: "checkbox checkbox-success"
+  }, [_c("input", {
+    attrs: {
+      id: "user-notification",
+      type: "checkbox"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "user-notification"
+    }
+  }, [_vm._v("\n                                            User notifications\n                                        ")])]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-block btn-primary"
+  }, [_c("i", {
+    staticClass: "fa fa-save"
+  }), _vm._v(" Save")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h4", {
+    staticClass: "text-center text-primary"
+  }, [_vm._v("Message settings")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "checkbox checkbox-success"
+  }, [_c("input", {
+    attrs: {
+      id: "message-sound",
+      type: "checkbox"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "message-sound"
+    }
+  }, [_vm._v("\n                                            Message sound\n                                        ")])]), _vm._v(" "), _c("div", {
+    staticClass: "checkbox checkbox-success"
+  }, [_c("input", {
+    attrs: {
+      id: "mail-message",
+      type: "checkbox"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "mail-message"
+    }
+  }, [_vm._v("\n                                            Opt out of receiving messages mail\n                                        ")])]), _vm._v(" "), _c("div", {
+    staticClass: "checkbox checkbox-success"
+  }, [_c("input", {
+    attrs: {
+      id: "service-message",
+      type: "checkbox"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "service-message"
+    }
+  }, [_vm._v("\n                                            Service message\n                                        ")])]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-block btn-primary"
+  }, [_c("i", {
+    staticClass: "fa fa-save"
+  }), _vm._v(" Save")])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h4", {
+    staticClass: "text-center text-primary"
+  }, [_vm._v("Account Settings")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-8"
+  }, [_vm._v("Delete my account")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-4"
+  }, [_c("a", {
+    attrs: {
+      href: "javascript:void(0)"
+    }
+  }, [_vm._v("Delete account")])])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12",
+    staticStyle: {
+      "border-bottom": "1px solid #ccc",
+      "padding-bottom": "15px",
+      "padding-top": "15px"
+    }
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-8"
+  }, [_vm._v("Deactivate my account")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-4"
+  }, [_c("inertia-link", {
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.deactivate.apply(null, arguments);
+      }
+    }
+  }, [_vm._v("Deactivate account")])], 1)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12",
+    staticStyle: {
+      "border-bottom": "1px solid #ccc",
+      "padding-bottom": "15px",
+      "padding-top": "15px"
+    }
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-8"
+  }, [_vm._v("Help & info")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-4"
+  }, [_c("a", {
+    attrs: {
+      href: "javascript:void(0)"
+    }
+  }, [_vm._v("Account Info")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12",
+    staticStyle: {
+      "border-bottom": "1px solid #ccc",
+      "padding-bottom": "15px",
+      "padding-top": "15px"
+    }
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-8"
+  }, [_vm._v("Support")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-4"
+  }, [_c("a", {
+    attrs: {
+      href: "javascript:void(0)"
+    }
+  }, [_vm._v("Account support")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12",
+    staticStyle: {
+      "padding-bottom": "15px",
+      "padding-top": "15px"
+    }
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-8"
+  }, [_vm._v("Trusted browser")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-4"
+  }, [_vm.$page.auth.user.browser === "0" ? _c("inertia-link", {
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.enableTrustedBrowser("enable");
+      }
+    }
+  }, [_vm._v("Enable")]) : _c("inertia-link", {
+    attrs: {
+      href: "javascript:void(0)"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.enableTrustedBrowser("disable");
+      }
+    }
+  }, [_vm._v("Disable")])], 1)])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "card-box"
+  }, [_c("h4", {
+    staticClass: "text-center text-primary"
+  }, [_vm._v("Recent activities")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "row acts"
+  }, [_c("div", {
+    staticClass: "col-md-10"
+  }, [_c("i", {
+    staticClass: "fa fa-info-circle"
+  }), _vm._v("  New support issue has been closed\n                                ")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-2"
+  }, [_c("a", {
+    attrs: {
+      href: "javascript:void(0);"
+    }
+  }, [_vm._v("view")])])]), _vm._v(" "), _c("div", {
+    staticClass: "row acts"
+  }, [_c("div", {
+    staticClass: "col-md-10"
+  }, [_c("i", {
+    staticClass: "fa fa-info-circle"
+  }), _vm._v("  New support issue has been closed\n                                ")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-2"
+  }, [_c("a", {
+    attrs: {
+      href: "javascript:void(0);"
+    }
+  }, [_vm._v("view")])])]), _vm._v(" "), _c("div", {
+    staticClass: "row acts"
+  }, [_c("div", {
+    staticClass: "col-md-10"
+  }, [_c("i", {
+    staticClass: "fa fa-info-circle"
+  }), _vm._v("  New support issue has been closed\n                                ")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-2"
+  }, [_c("a", {
+    attrs: {
+      href: "javascript:void(0);"
+    }
+  }, [_vm._v("view")])])]), _vm._v(" "), _c("div", {
+    staticClass: "row acts"
+  }, [_c("div", {
+    staticClass: "col-md-10"
+  }, [_c("i", {
+    staticClass: "fa fa-info-circle"
+  }), _vm._v("  New support issue has been closed\n                                ")]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-2"
+  }, [_c("a", {
+    attrs: {
+      href: "javascript:void(0);"
+    }
+  }, [_vm._v("view")])])])])])])])])])]);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
 
 /***/ }),
 
@@ -278,413 +431,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Profile/AccountSettings.vue?vue&type=template&id=0cc10e51&scoped=true&":
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Profile/AccountSettings.vue?vue&type=template&id=0cc10e51&scoped=true& ***!
-  \*********************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { title: "Admin | Account settings" } }, [
-    _c("div", { staticClass: "content-page" }, [
-      _c("div", { staticClass: "content" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xs-12" }, [
-              _c("div", { staticClass: "page-title-box" }, [
-                _c("h4", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
-                _vm._v(" "),
-                _c("ol", { staticClass: "breadcrumb p-0 m-0" }, [
-                  _c("li", { attrs: { CLASS: "active" } }, [
-                    _vm._v(
-                      "\n                                    Account settings\n                                "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-6" }, [
-              _c("div", { staticClass: "card-box" }, [
-                _c("h4", { staticClass: "text-center text-primary" }, [
-                  _vm._v("Notification settings")
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "checkbox checkbox-success" }, [
-                      _c("input", {
-                        attrs: { id: "notification-sound", type: "checkbox" }
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "notification-sound" } }, [
-                        _vm._v(
-                          "\n                                           Notification sound\n                                        "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "checkbox checkbox-success" }, [
-                      _c("input", {
-                        attrs: { id: "mail-recieve", type: "checkbox" }
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "mail-recieve" } }, [
-                        _vm._v(
-                          "\n                                            Opt out of receiving mail\n                                        "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "checkbox checkbox-success" }, [
-                      _c("input", {
-                        attrs: { id: "user-notification", type: "checkbox" }
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "user-notification" } }, [
-                        _vm._v(
-                          "\n                                            User notifications\n                                        "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "btn btn-block btn-primary" }, [
-                      _c("i", { staticClass: "fa fa-save" }),
-                      _vm._v(" Save")
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
-              _c("div", { staticClass: "card-box" }, [
-                _c("h4", { staticClass: "text-center text-primary" }, [
-                  _vm._v("Message settings")
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "checkbox checkbox-success" }, [
-                      _c("input", {
-                        attrs: { id: "message-sound", type: "checkbox" }
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "message-sound" } }, [
-                        _vm._v(
-                          "\n                                            Message sound\n                                        "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "checkbox checkbox-success" }, [
-                      _c("input", {
-                        attrs: { id: "mail-message", type: "checkbox" }
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "mail-message" } }, [
-                        _vm._v(
-                          "\n                                            Opt out of receiving messages mail\n                                        "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "checkbox checkbox-success" }, [
-                      _c("input", {
-                        attrs: { id: "service-message", type: "checkbox" }
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "service-message" } }, [
-                        _vm._v(
-                          "\n                                            Service message\n                                        "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "btn btn-block btn-primary" }, [
-                      _c("i", { staticClass: "fa fa-save" }),
-                      _vm._v(" Save")
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-6" }, [
-              _c("div", { staticClass: "card-box" }, [
-                _c("h4", { staticClass: "text-center text-primary" }, [
-                  _vm._v("Account Settings")
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-8" }, [
-                        _vm._v("Delete my account")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-4" }, [
-                        _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                          _vm._v("Delete account")
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("hr"),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-md-12",
-                      staticStyle: {
-                        "border-bottom": "1px solid #ccc",
-                        "padding-bottom": "15px",
-                        "padding-top": "15px"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-8" }, [
-                          _vm._v("Deactivate my account")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "col-md-4" },
-                          [
-                            _c(
-                              "inertia-link",
-                              {
-                                attrs: { href: "javascript:void(0)" },
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.deactivate($event)
-                                  }
-                                }
-                              },
-                              [_vm._v("Deactivate account")]
-                            )
-                          ],
-                          1
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-md-12",
-                      staticStyle: {
-                        "border-bottom": "1px solid #ccc",
-                        "padding-bottom": "15px",
-                        "padding-top": "15px"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-8" }, [
-                          _vm._v("Help & info")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-4" }, [
-                          _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                            _vm._v("Account Info")
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-md-12",
-                      staticStyle: {
-                        "border-bottom": "1px solid #ccc",
-                        "padding-bottom": "15px",
-                        "padding-top": "15px"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-8" }, [
-                          _vm._v("Support")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-4" }, [
-                          _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                            _vm._v("Account support")
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-md-12",
-                      staticStyle: {
-                        "padding-bottom": "15px",
-                        "padding-top": "15px"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-8" }, [
-                          _vm._v("Trusted browser")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "col-md-4" },
-                          [
-                            _vm.$page.auth.user.browser === "0"
-                              ? _c(
-                                  "inertia-link",
-                                  {
-                                    attrs: { href: "javascript:void(0)" },
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.enableTrustedBrowser(
-                                          "enable"
-                                        )
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("Enable")]
-                                )
-                              : _c(
-                                  "inertia-link",
-                                  {
-                                    attrs: { href: "javascript:void(0)" },
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.enableTrustedBrowser(
-                                          "disable"
-                                        )
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("Disable")]
-                                )
-                          ],
-                          1
-                        )
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
-              _c("div", { staticClass: "card-box" }, [
-                _c("h4", { staticClass: "text-center text-primary" }, [
-                  _vm._v("Recent activities")
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row acts" }, [
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c("i", { staticClass: "fa fa-info-circle" }),
-                    _vm._v(
-                      "  New support issue has been closed\n                                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-2" }, [
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("view")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row acts" }, [
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c("i", { staticClass: "fa fa-info-circle" }),
-                    _vm._v(
-                      "  New support issue has been closed\n                                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-2" }, [
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("view")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row acts" }, [
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c("i", { staticClass: "fa fa-info-circle" }),
-                    _vm._v(
-                      "  New support issue has been closed\n                                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-2" }, [
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("view")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row acts" }, [
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c("i", { staticClass: "fa fa-info-circle" }),
-                    _vm._v(
-                      "  New support issue has been closed\n                                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-2" }, [
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("view")
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./resources/js/Pages/Profile/AccountSettings.vue":
 /*!********************************************************!*\
   !*** ./resources/js/Pages/Profile/AccountSettings.vue ***!
@@ -749,8 +495,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_style_index_0_id_0cc10e51_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./AccountSettings.vue?vue&type=style&index=0&id=0cc10e51&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Profile/AccountSettings.vue?vue&type=style&index=0&id=0cc10e51&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_style_index_0_id_0cc10e51_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_style_index_0_id_0cc10e51_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_style_index_0_id_0cc10e51_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_style_index_0_id_0cc10e51_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_style_index_0_id_0cc10e51_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_style_index_0_id_0cc10e51_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_style_index_0_id_0cc10e51_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
@@ -763,10 +509,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_template_id_0cc10e51_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./AccountSettings.vue?vue&type=template&id=0cc10e51&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Profile/AccountSettings.vue?vue&type=template&id=0cc10e51&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_template_id_0cc10e51_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_template_id_0cc10e51_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../node_modules/vue-loader/lib??vue-loader-options!./AccountSettings.vue?vue&type=template&id=0cc10e51&scoped=true& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Profile/AccountSettings.vue?vue&type=template&id=0cc10e51&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_template_id_0cc10e51_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_template_id_0cc10e51_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountSettings_vue_vue_type_template_id_0cc10e51_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
