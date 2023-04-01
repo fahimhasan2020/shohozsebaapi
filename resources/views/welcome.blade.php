@@ -72,7 +72,7 @@
                 </div>
             <div class="content">
                 <div class="title m-b-md">
-                  Onek Kothin Sheba API
+                  Beshi Kothin Sheba API
                 </div>
 
                 <div class="links">
