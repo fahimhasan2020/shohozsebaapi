@@ -72,7 +72,7 @@
                 </div>
             <div class="content">
                 <div class="title m-b-md">
-                  Beshi Kothin Sheba API
+                  Ekdomi kothin na
                 </div>
 
                 <div class="links">
