@@ -72,7 +72,7 @@
                 </div>
             <div class="content">
                 <div class="title m-b-md">
-                  Shudhu kothin na
+                  SHohozseba Api
                 </div>
 
                 <div class="links">
