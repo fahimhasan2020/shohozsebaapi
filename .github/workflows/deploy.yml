@@ -33,4 +33,4 @@ jobs:
             git pull origin master
             composer update
             php artisan migrate:fresh --seed
-            npm run dev
+            npm dev
