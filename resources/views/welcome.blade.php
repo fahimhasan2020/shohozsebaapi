@@ -48,10 +48,11 @@
 
             .title {
                 font-size: 84px;
+                color:white
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -69,7 +70,7 @@
         <div class="flex-center position-ref full-height">
                 <div class="top-right links">
                         <a href="{{ url('/admins/login') }}">HOME</a>
-                        <a href="#">V-1.1</a>
+                        <a href="#">V-1.2</a>
                 </div>
             <div class="content">
                 <div class="title m-b-md">
