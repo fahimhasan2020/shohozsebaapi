@@ -1,10 +1,11 @@
 /node_modules
 /public/hot
-/public/js
+/public/js/*
 composer.lock
 /public/storage
 /storage/*.key
 /public/admin/admin.js
+/public/admin/admin.css
 /vendor
 .env
 .env.backup
