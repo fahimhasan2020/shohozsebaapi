@@ -24,6 +24,7 @@
                         <ul :class="['list-unstyled',userBlock]"">
                             <li v-if="roles.includes('developper') || roles.includes('superadmin')"><inertia-link href="/admins/admin">Admin</inertia-link></li>
                             <li v-if="roles.includes('developper') || roles.includes('superadmin') || roles.includes('admin')" ><inertia-link href="/admins/user">User</inertia-link></li>
+                            <li v-if="roles.includes('developper') || roles.includes('superadmin') || roles.includes('admin')" ><inertia-link href="/admins/nurse">Nurs</inertia-link></li>
                         </ul>
                     </li><!----------Users------------>
 
@@ -67,7 +68,7 @@
             <div class="clearfix"></div>
             <div class="help-box">
                 <h5 class="text-muted m-t-0">For Help ?</h5>
-                <p class=""><span class="text-custom">Email:</span> <br/> fahim@bizbrainers.com</p>
+                <p class=""><span class="text-custom">Email:</span> <br/> fahimhasan2020@gmail.com</p>
                 <p class="m-b-0"><span class="text-custom">Call:</span> <br/> (+880) 171 143 2259</p>
             </div>
         </div>

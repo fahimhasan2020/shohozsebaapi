@@ -49,6 +49,8 @@ Route::post('/admin-resource/invite/accept', 'AdminResourceController@inviteResp
 /*Admins*/
 /*Users*/
 Route::get('/user','HomeController@userList')->name('user.list');
+Route::get('/user/datatable','HomeController@userDataTable')->name('user.list.datatable');
+Route::delete('/user/suspend/{id}','HomeController@userSuspend')->name('user.suspend');
 /*Users*/
 
 /*Mailbox*/
@@ -61,4 +63,11 @@ Route::get('email/sent','MailboxController@sent')->name('mail.sent');
 Route::get('email/support','MailboxController@support')->name('mail.support');
 Route::get('email/contact','MailboxController@contact')->name('mail.contact');
 /*Mailbox*/
+
+
+/*Users*/
+Route::get('/nurse','HomeController@nurseList')->name('nurse.list');
+Route::get('/nurse/datatable','HomeController@nurseDataTable')->name('nurse.list.datatable');
+Route::delete('/nurse/suspend/{id}','HomeController@nurseSuspend')->name('nurse.suspend');
+/*Users*/
 

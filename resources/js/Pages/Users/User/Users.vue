@@ -1,61 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <div class="col-md-4 col-sm-12">
-                <h3 class="text-primary">Add Permissions</h3>
-                <hr>
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <input type="text" placeholder="Enter permission name" class="form-control" v-model="permissionForm.name">
-                            <span class="text-danger text-center mt-2">{{permissionFormError.name}}</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <select name="type" id="type" class="form-control" v-model="permissionForm.type" @change="permissionTypeTraker">
-                                <option value="">Select type</option>
-                                <option value="resource">Resource</option>
-                                <option value="single">Single</option>
-                                <option value="custom">Custom</option>
-                            </select>
-                            <span class="text-danger text-center mt-2">{{permissionFormError.type}}</span>
-                        </div>
-                    </div>
-                    <div class="col-md-12" :class="customChildControl">
-                        <div class="form-group" style="display: flex">
-                            <input type="text" class="form-control" v-model="permissionForm.custom" placeholder="enter child permission name">
-                            <button type="button" @click="customChildAppend" class="btn btn-primary">Add</button>
-                        </div>
-                        <span class="text-danger text-center mt-2">{{permissionFormError.custom}}</span>
-                        <ol>
-                            <li v-for="(cl,index) in customChildList" :key="index">
-                                <i class="fa fa-remove text-danger" @click="removeCustom(index)"></i>&nbsp;
-                                {{cl}}
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <button class="btn btn-primary btn-block" @click.prevent="addPermission">Add permission &nbsp;<i class="mdi mdi-content-save"></i></button>
-                    </div>
-                </div>
-                <hr>
-                <h3 class="text-success">Import Permissions</h3>
-                <div class="row">
-                    <div class="col-md-12">
-                        <form @submit.prevent="importSubmit" enctype="multipart/form-data" style="margin-top: 15px">
-                            <div class="form-group">
-                                <input type="file" ref="fileupload" @change="getImportFile"  class="form-control">
-                            </div>
-                            {{this.importFileName}}
-                            <button type="submit" class="btn btn-block btn-info"><i class="fa fa-file-excel-o"></i>&nbsp;Import all permissions</button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-            
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div>
                     <div style="float: right; margin-top: 10px;">
                         <input type="text" class="form-control" style="width: 200px" v-model="searchBox" @input="dataTable" placeholder="search">
@@ -68,7 +14,7 @@
                             <option value="Name">Name</option>
                         </select>
                     </div>
-                    <div style="float: right;margin-top: 10px;width: 200px;" class="form-group">
+                    <!-- <div style="float: right;margin-top: 10px;width: 200px;" class="form-group">
                         <select name="result-perpage" v-model="bulkAction" id="bulkAction" @change="trackBulkAction" class="form-control" style="width: 140px;margin-left: 5px">
                             <option value="">Bulk Action</option>
                             <option value="refresh">Refresh</option>
@@ -79,7 +25,7 @@
                             <option value="excel">Export excel</option>
                             <option value="pdf">Export pdf</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div style="float: left;margin-top: 10px;width: 250px;display: flex" class="form-group">
                         <label for="per-page" style="margin-top: 10px">Per page</label>
                         <select name="result-perpage" id="per-page" class="form-control" v-model="perPage" @change="dataTable" style="width: 100px;margin-left: 5px">
@@ -94,7 +40,7 @@
                 <div v-if="isLoading" style="height: 40px;width: 150px;background: white;position: absolute;top: 30%;left: 50%;text-align: center;padding-top: 3px;font-family: monospace;font-size: 18px;box-shadow: 1px 1px 7px 2px #ccc;
 }">Loading...</div>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-dark">
+                    <table class="table table-bordered table-dark" style="overflow-x: scroll">
                         <thead>
                         <tr>
                             <th scope="col" style="width: 30px">
@@ -103,9 +49,12 @@
                                     <label for="checkbox00"> </label>
                                 </div>
                             </th>
-                            <th scope="col" style="vertical-align: middle">Name</th>
-                            <th scope="col" style="width: 100px;vertical-align: middle">Type</th>
-                            <th scope="col" style="width: 55px;vertical-align: middle">Action</th>
+                            <th scope="col" style="vertical-align: middle">Avatar</th>
+                            <th scope="col" style="width: 150px;vertical-align: middle">Email</th>
+                            <th scope="col" style="width: 150px;vertical-align: middle">Phone Number</th>
+                            <th scope="col" style="width: 150px;vertical-align: middle">First Name</th>
+                            <th scope="col" style="width: 150px;vertical-align: middle">Last Name</th>
+                            <th scope="col" style="width: 250px;vertical-align: middle">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -116,12 +65,31 @@
                                     <label :for="permission.id"> </label>
                                 </div>
                             </th>
-                            <td style="vertical-align: middle">{{permission.name.split('_').join(' ')}}</td>
-                            <td style="vertical-align: middle">{{permission.type}}</td>
                             <td style="vertical-align: middle">
-                                <inertia-link href="#" class="text-danger" data-toggle="tooltip" data-placement="top" title="Delete info" @click.prevent="deletePermission(permission.id)">
+                                <img height="50px" width="50px" v-if="permission.profile_picture" :src="permission.profile_picture" alt="">
+                                <img height="50px" width="50px" v-else src="../../../../../public/admin/assets/images/icons/assistant.svg" alt="">
+                            </td>
+                            <td style="vertical-align: middle">{{permission.email}}</td>
+                            <td style="vertical-align: middle">{{permission.phone_number}}</td>
+                            <td style="vertical-align: middle">{{permission.first_name}}</td>
+                            <td style="vertical-align: middle">{{permission.last_name}}</td>
+                            <td style="vertical-align: middle">
+                                <!-- <inertia-link href="#" v-if="permission.id !== $page.auth.user.id && permission.id !== 1" class="text-primary" data-toggle="tooltip" data-placement="top" title="Sign in" @click.prevent="signInAsNewAdmin(permission.id)">
+                                    <i class="fa fa-sign-in"></i></inertia-link>
+                                <inertia-link v-if="permission.id !== $page.auth.user.id && permission.id !== 1" href="#" class="text-warning" data-toggle="tooltip" data-placement="top" title="Hold Admin" @click.prevent="holdAdmin(permission.id)">
+                                    <i class="fa fa-ban"></i></inertia-link>
+                                <inertia-link v-if="permission.id !== $page.auth.user.id && permission.id !== 1" href="#" class="text-danger" data-toggle="tooltip" data-placement="top" title="Suspend admin" @click.prevent="suspendAdmin(permission.id)">
                                     <i class="fa fa-trash"></i></inertia-link>
-                                &nbsp;<a href="#" class="text-warning" data-toggle="tooltip" data-placement="top" title="Edit info"><i class="fa fa-pencil" data-toggle="modal" data-target="#exampleModals" @click.prevent="permissionPopUp(permission)"></i></a>
+                                &nbsp;<a href="#" class="text-warning" data-toggle="tooltip" data-placement="top" title="Edit info"><i class="fa fa-pencil" data-toggle="modal" data-target="#exampleModals" @click.prevent="permissionPopUp(permission)"></i></a> -->
+                                <inertia-link href="#" class="btn btn-warning mb-2">
+                                    View user
+                                </inertia-link>
+                                <inertia-link v-if="permission.suspended === 0" href="#" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Suspend admin" @click.prevent="suspendAdmin(permission.id)">
+                                    Suspend user
+                                </inertia-link>
+                                <inertia-link v-else href="#" class="btn btn-primary " data-toggle="tooltip" data-placement="top" title="Suspend admin" @click.prevent="unSuspendAdmin(permission.id)">
+                                    Un-suspend user
+                                </inertia-link>
                             </td>
                         </tr>
                         </tbody>
@@ -173,55 +141,6 @@
                 </nav>
             </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModals" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabels">Edit Permission</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" v-model="permissionEditForm.name">
-                                <span class="text-danger text-center mt-2">{{permissionEditFormError.name}}</span>
-                            </div>
-                            <div class="col-md-6">
-                                <select name="type" id="typeEdit" class="form-control" v-model="permissionEditForm.type" @change="permissionEditTypeTraker">
-                                    <option value="">Select type</option>
-                                    <option value="resource">Resource</option>
-                                    <option value="single">Single</option>
-                                    <option value="custom">Custom</option>
-                                </select>
-                                <span class="text-danger text-center mt-2">{{permissionEditFormError.type}}</span>
-                            </div>
-                            <div class="col-md-12" :class="customEditChildControl">
-                                <div class="form-group" style="display: flex;margin-top: 5px">
-                                    <input type="text" class="form-control" v-model="permissionEditForm.custom" placeholder="enter child permission name">
-                                    <button type="button" @click="customEditChildAppend" class="btn btn-primary">Add</button>
-                                </div>
-                                <span class="text-danger text-center mt-2">{{permissionEditFormError.custom}}
-                                </span>
-                                <ol>
-                                    <li v-for="(cl,index) in customEditChildList" :key="index">
-                                        <i class="fa fa-remove text-danger" @click="removeEditCustom(index)"></i>&nbsp;
-                                        {{cl}}
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" @click.prevent="permissionEditSubmit">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div><!-------Edit modal----->
     </div>
 </template>
 <script>
@@ -310,7 +229,7 @@
                         return this.permissionFormError.custom = 'Add child permissions first';
                     }
                     if (this.permissionForm.type === 'custom' && this.customChildList.length > 0){
-                         this.permissionForm.customs = this.customChildList;
+                        this.permissionForm.customs = this.customChildList;
                     }
                     this.permissionFormError.name = '';
                     this.permissionFormError.type = '';
@@ -532,9 +451,9 @@
                     this.dataTable();
                 }else if (this.bulkAction === 'excel'){
                     this.bulkAction = '';
-                     url = '/admins/admin-permission/excel/export';
-                     win = window.open(url, '_blank');
-                     win.focus();
+                    url = '/admins/admin-permission/excel/export';
+                    win = window.open(url, '_blank');
+                    win.focus();
                 }else if (this.bulkAction === 'csv'){
                     this.bulkAction = '';
                     url = '/admins/admin-permission/csv/export';
@@ -549,11 +468,50 @@
 
                 }
             },
+            signInAsNewAdmin(id){
+                this.$inertia.post('/admins/login/others',{id:id})
+            },
+            holdAdmin(id){
+                this.$confirm("Are you sure to hold this admin?","Warning","warning").then(() => {
+                    this.$inertia.delete('/admins/hold/admin/'+id,{
+                        replace: false,
+                        preserveState: false,
+                        preserveScroll: true,
+                        only: [],
+                    }).then(()=>{
+                        //
+                    });
+                });
+            },
+            suspendAdmin(id){
+                this.$confirm("Are you sure to suspend this user?","Warning","warning").then(() => {
+                    this.$inertia.delete('/admins/user/suspend/'+id,{
+                        replace: false,
+                        preserveState: false,
+                        preserveScroll: true,
+                        only: [],
+                    }).then(()=>{
+                        //
+                    });
+                });
+            },
+            unSuspendAdmin(id){
+                this.$confirm("Are you sure to un-suspend this user?","Warning","warning").then(() => {
+                    this.$inertia.delete('/admins/user/suspend/'+id,{
+                        replace: false,
+                        preserveState: false,
+                        preserveScroll: true,
+                        only: [],
+                    }).then(()=>{
+                        //
+                    });
+                });
+            },
             //datatable methods
             dataTable(){
                 this.isLoading = true;
                 //this.$loading(true);
-                axios.get('/admins/admin-permission/', {
+                axios.get('/admins/user/datatable', {
                     params: {
                         page: this.currentPage,
                         perPage:this.perPage,

@@ -13,7 +13,9 @@ use Inertia\Inertia;
 use DB;
 use Sentinel;
 use Carbon\Carbon;
+use App\Model\Subscribers\Subscriber;
 use Cache;
+use App\Model\Nursing;
 
 class HomeController extends Controller
 {
@@ -163,8 +165,100 @@ class HomeController extends Controller
             'adminDisabled'=>$adminsDisabled
         ]);}
     public function userList(){
-        return Inertia::render('Users/User/UserList');
+        $users = DB::table('subscriber')->paginate(10);
+        return Inertia::render('Users/User/UserList',
+        [
+            'user'=>$users
+        ]
+    
+    );
     }
+
+    public function userDataTable(Request $request)
+    {
+        $per = Subscriber::select('id','first_name','last_name','email','profile_picture','phone_number');
+        if ($request->orderBy === 'Newest'){
+            $per->orderBy('id','desc');
+        }elseif ($request->orderBy === 'Name'){
+            $per->orderBy('first_name','asc');
+        }else{
+            $per->orderBy('id','asc');
+        }
+        $search_input = $request->input('search');
+        if ($search_input) {
+            $per->where(function($per) use ($search_input) {
+                $per->where('first_name', 'like', '%' . $search_input . '%')
+                    ->orWhere('last_name', 'like', '%' . $search_input . '%')
+                    ->orWhere('email', 'like', '%' . $search_input . '%')
+                    ->orWhere('phone_number', 'like', '%' . $search_input . '%');
+            });
+        }
+        $per->where('suspended',0);
+        $permissions = $per->paginate($request->perPage);
+        return $permissions;
+    }
+
+    public function userSuspend($id)
+    {
+        $user = Subscriber::findOrFail($id);
+        if($user->suspended === 1){
+            $user->suspended = false;
+        }else{
+            $user->suspended = true;
+        }
+        $user->update();
+        return redirect()->back()->with('success','User suspended');
+    }
+
+    public function nurseList()
+    {
+        $nurs = DB::table('nursing')->paginate(10);
+        return Inertia::render('Users/Nursing/NursingList',
+        [
+            'nurs'=>$nurs
+        ]
+    
+    );   
+    }
+
+    public function nurseDataTable(Request $request)
+    {
+        $per = Nursing::select('id','name','trade_licence','email','profile_picture','phone_number');
+        if ($request->orderBy === 'Newest'){
+            $per->orderBy('id','desc');
+        }elseif ($request->orderBy === 'Name'){
+            $per->orderBy('first_name','asc');
+        }else{
+            $per->orderBy('id','asc');
+        }
+        $search_input = $request->input('search');
+        if ($search_input) {
+            $per->where(function($per) use ($search_input) {
+                $per->where('name', 'like', '%' . $search_input . '%')
+                    ->orWhere('email', 'like', '%' . $search_input . '%')
+                    ->orWhere('phone_number', 'like', '%' . $search_input . '%')
+                    ->orWhere('trade_licence', 'like', '%' . $search_input . '%');
+            });
+        }
+        $permissions = $per->paginate($request->perPage);
+        return $permissions;
+    }
+
+    public function nurseSuspend($id)
+    {
+        $user = Nursing::findOrFail($id);
+        if($user->approved === 1){
+            $user->approved = false;
+            $user->update();
+            return redirect()->back()->with('success','Nursing suspended');
+        }else{
+            $user->approved = true;
+            $user->update();
+            return redirect()->back()->with('success','Nursing Approved');
+        }
+       
+    }
+
     public function updateDP(Request $request){
         $request->validate([
             'profilePicture'=>'required'

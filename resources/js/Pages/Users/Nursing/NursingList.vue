@@ -1,5 +1,5 @@
 <template>
-    <layout title="User List">
+    <layout title="Nursing List">
         <div class="content-page">
             <!-- Start content -->
             <div class="content">
@@ -10,7 +10,7 @@
                                 <h4 class="page-title">Dashboard</h4>
                                 <ol class="breadcrumb p-0 m-0">
                                     <li CLASS="active">
-                                        User List
+                                        Nursing List
                                     </li>
                                 </ol>
                                 <div class="clearfix"></div>
@@ -21,9 +21,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card-box">
-                                <h4 class="header-title m-t-0 m-b-30">User Panel</h4>
+                                <h4 class="header-title m-t-0 m-b-30">Nursing Panel</h4>
                                 <hr>
-                                <users v-bind:permissions="user"></users>
+                                <nurs v-bind:permissions="nurs"></nurs>
                             </div>
                         </div> <!-- end col -->
                     </div>
@@ -36,9 +36,9 @@
 <script>
     import Layout from "../../inc/Layout";
     import Dashboard from "../../../Mixins/Dashboard";
-    import Users from "./Users"
+    import Nurs from "./Nurs"
     export default {
-        components: {Layout,users:Users},
+        components: {Layout,nurs:Nurs},
         mixins: [Dashboard],
         data () {
             return {
@@ -47,7 +47,7 @@
         },
 
         props: {
-            user:Object,
+            nurs:Object,
         },
         computed: {
           //
