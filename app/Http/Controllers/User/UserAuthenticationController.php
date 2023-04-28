@@ -29,7 +29,7 @@ class UserAuthenticationController extends Controller
             $otp = rand(1111,9999);
             $to = $request->phoneNumber;
             $token = "ea8d985738b5a530e785ded316150b1b";
-            $message = "আপনার ওটিপি কোড হলো:".$otp."    Qu9aM1TQT30";
+            $message = "আপনার ওটিপি কোড হলো:".$otp."    depnHoB23DE";
             $url = "http://api.greenweb.com.bd/api.php?json";
             $data= array(
                 'to'=>"$to",
