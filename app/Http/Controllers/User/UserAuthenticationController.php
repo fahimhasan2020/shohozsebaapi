@@ -10,6 +10,7 @@ use Laravel\Sanctum\PersonalAccessToken;
 use Hash;
 use Auth;
 use Carbon\Carbon;
+use DB;
 
 
 class UserAuthenticationController extends Controller
@@ -161,5 +162,12 @@ class UserAuthenticationController extends Controller
        }else{
         return response()->json(['error'=>'Something went wrong']);
        }
+    }
+
+    public function doctorDepartments()
+    {
+        $departments = DB::table('doctor_departments')->get();
+        return $departments;
+        //return view('visual',['departments'=>$departments]);
     }
 }
