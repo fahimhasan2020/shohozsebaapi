@@ -54,24 +54,24 @@ class UserAuthenticationController extends Controller
                 ]);
             }else{
                 $otp = rand(1111,9999);
-            $to = $request->phone_number;
-            $token = "ea8d985738b5a530e785ded316150b1b";
-            $message = "আপনার ওটিপি কোড হলো:".$otp."    Qu9aM1TQT30";
-            $url = "http://api.greenweb.com.bd/api.php?json";
-            $data= array(
-                'to'=>"$to",
-                'message'=>"$message",
-                'token'=>"$token"
-                ); 
-            $ch = curl_init(); 
-            curl_setopt($ch, CURLOPT_URL,$url);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_ENCODING, '');
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $smsresult = curl_exec($ch);    
-            return response()->json(['otp'=>$otp]);
+                $to = $request->phoneNumber;
+                $token = "ea8d985738b5a530e785ded316150b1b";
+                $message = "আপনার ওটিপি কোড হলো:".$otp."    depnHoB23DE";
+                $url = "http://api.greenweb.com.bd/api.php?json";
+                $data= array(
+                    'to'=>"$to",
+                    'message'=>"$message",
+                    'token'=>"$token"
+                    ); 
+                $ch = curl_init(); 
+                curl_setopt($ch, CURLOPT_URL,$url);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                curl_setopt($ch, CURLOPT_ENCODING, '');
+                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $smsresult = curl_exec($ch);    
+                return response()->json(['otp'=>$otp]);
             }
         }
     }
