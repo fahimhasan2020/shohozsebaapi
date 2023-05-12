@@ -21,8 +21,11 @@ class CreateSubscriber extends Migration
             $table->string('first_name',200)->nullable();
             $table->string('last_name',200)->nullable();
             $table->string('gender',200)->nullable();
-            $table->string('profile_picture',200)->nullable();
+            $table->text('profile_picture')->nullable();
+            $table->text('push_token')->nullable();
             $table->string('blood_group',200)->nullable();
+            $table->string('lat',200)->nullable();
+            $table->string('lng',200)->nullable();
             $table->integer('age')->nullable();
             $table->boolean('suspended')->default(false);
             $table->boolean('blocked')->default(false);

@@ -46,7 +46,6 @@ class UserAuthenticationController extends Controller
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $smsresult = curl_exec($ch);    
             return response()->json(['otp'=>$otp]);
-
         }else{
             if($user->suspended == 1){
                 throw ValidationException::withMessages([
@@ -54,24 +53,24 @@ class UserAuthenticationController extends Controller
                 ]);
             }else{
                 $otp = rand(1111,9999);
-                $to = $request->phoneNumber;
-                $token = "ea8d985738b5a530e785ded316150b1b";
-                $message = "আপনার ওটিপি কোড হলো:".$otp."    depnHoB23DE";
-                $url = "http://api.greenweb.com.bd/api.php?json";
-                $data= array(
-                    'to'=>"$to",
-                    'message'=>"$message",
-                    'token'=>"$token"
-                    ); 
-                $ch = curl_init(); 
-                curl_setopt($ch, CURLOPT_URL,$url);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-                curl_setopt($ch, CURLOPT_ENCODING, '');
-                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                $smsresult = curl_exec($ch);    
-                return response()->json(['otp'=>$otp]);
+            $to = $request->phoneNumber;
+            $token = "ea8d985738b5a530e785ded316150b1b";
+            $message = "আপনার ওটিপি কোড হলো:".$otp."    depnHoB23DE";
+            $url = "http://api.greenweb.com.bd/api.php?json";
+            $data= array(
+                'to'=>"$to",
+                'message'=>"$message",
+                'token'=>"$token"
+                ); 
+            $ch = curl_init(); 
+            curl_setopt($ch, CURLOPT_URL,$url);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_ENCODING, '');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $smsresult = curl_exec($ch);    
+            return response()->json(['otp'=>$otp]);
             }
         }
     }
@@ -155,6 +154,15 @@ class UserAuthenticationController extends Controller
        }
        if($request->has('blood_group')){
         $user->blood_group = $request->input('blood_group');
+       }
+       if($request->has('lat')){
+        $user->lat = $request->input('lat');
+       }
+       if($request->has('lng')){
+        $user->lng = $request->input('lng');
+       }
+       if($request->has('push_token')){
+        $user->push_token = $request->input('push_token');
        }
        $updated = $user->save();
        if($updated){

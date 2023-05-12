@@ -7,9 +7,10 @@ Route::post('/token/verify','UserAuthenticationController@verifyLogin')->name('t
 Route::get('/doctordepartments','UserAuthenticationController@doctorDepartments')->name('token-verify');
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::post('/update/profile','UserAuthenticationController@detailsUpdate')->name('profile-update'); 
+    Route::post('/update/profile','UserAuthenticationController@detailsUpdate')->name('profile-update');
+    
 });
-
+Route::post('/blood/request','HomeController@bloodRequest')->name('blood-request');
 Route::prefix('nursing')->group(function () {
     include('nursing.php');
 });
