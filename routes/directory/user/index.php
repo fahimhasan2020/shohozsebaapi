@@ -11,24 +11,18 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 Route::post('/blood/request','HomeController@bloodRequest')->name('blood-request');
 Route::post('/nearer/blood/request','HomeController@nearerBloodRequest')->name('nearer-blood-request');
+
+
 Route::prefix('nursing')->group(function () {
     include('nursing.php');
 });
 
 Route::prefix('doctor')->group(function () {
-    Route::post('/register','DoctorAuthenticationController@register')->name('doctor.register');
-    Route::post('/login','DoctorAuthenticationController@login')->name('doctor.login');
-    Route::post('/loginotpveritfy','DoctorAuthenticationController@loginOtpVerification')->name('doctor.login.otp.verify');
-
-    Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('/single/{id}','DoctorAuthenticationController@get')->name('doctor.get');
-    Route::get('/activity/change/{id}/{state}','DoctorAuthenticationController@changeActivity')->name('doctor.changeActivity');
-    Route::post('/contacts/query','DoctorAuthenticationController@postContact')->name('doctor.post-contact');
-    Route::post('/update/dp','DoctorAuthenticationController@updateDp')->name('doctor.updateDp');
-    
-    });
-    Route::get('/update/online/{id}/{value}','DoctorAuthenticationController@updateOnline')->name('doctor.updateOnline');
-    Route::get('/get/online/{id}','DoctorAuthenticationController@getOnline')->name('doctor.getOnline');
+    include('doctor.php');
 });
+
+Route::post('/create/appointment','UserAppointmentController@postAppointment')->name('appointment_post');
+Route::get('/appointment/getuser/{id}','UserAppointmentController@getByUserId')->name('appointment_get_user');
+Route::get('/appointment/getdoctor/{id}','UserAppointmentController@getByDoctorId')->name('appointment_get_doctor');
 
 

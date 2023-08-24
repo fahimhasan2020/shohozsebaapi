@@ -67,12 +67,12 @@ class DoctorAuthenticationController extends Controller
     public function login(Request $request)
     {
         $request->validate(['phone_number'=>'required']);
-        $user = Nursing::where('phone_number', $request->phone_number)->first();
+        $user = Doctor::where('phone_number', $request->phone_number)->first();
         if (!$user) {
             throw ValidationException::withMessages([
                 'phone' => ['The provided number is incorrect'],
             ]);
-        }else if($user->approved == 0){
+        }else if($user->deactivated == 0){
             throw ValidationException::withMessages([
                 'phone' => ['Account is under verification'],
             ]);
@@ -105,7 +105,7 @@ class DoctorAuthenticationController extends Controller
     public function loginOtpVerification(Request $request)
     {
        $request->validate(['phone_number'=>'required']);
-       $user = Nursing::where('phone_number', $request->phone_number)->first();
+       $user = Doctor::where('phone_number', $request->phone_number)->first();
        $token = $user->createToken("Oppo G18 Pro")->plainTextToken;
         $response = [
             'user'=>$user,
@@ -115,9 +115,9 @@ class DoctorAuthenticationController extends Controller
 
     }
 
-    public function get($id)
+    public function get()
     {
-        $user = Nursing::where('id', $id)->first();
+        $user =  auth('sanctum')->user();
         return response()->json(['user'=>$user]);
     }
 
