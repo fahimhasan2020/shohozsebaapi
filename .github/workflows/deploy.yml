@@ -1,36 +1,36 @@
-name: Deploy to hosting
+# name: Deploy to hosting
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '16.x'
 
-      - name: Deploy code
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          script: |
-            cd /home/minhaz/admin.shohozseba.com
-            git add .
-            git commit -m "changes"
-            git pull origin master --rebase
-            composer update
-            php artisan migrate:fresh --seed
-            source /home/minhaz/nodevenv/admin.shohozseba.com/14/bin/activate && cd /home/minhaz/admin.shohozseba.com
-            npm run dev
+#       - name: Deploy code
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ secrets.HOST }}
+#           username: ${{ secrets.USERNAME }}
+#           password: ${{ secrets.PASSWORD }}
+#           port: ${{ secrets.PORT }}
+#           script: |
+#             cd /home/minhaz/admin.shohozseba.com
+#             git add .
+#             git commit -m "changes"
+#             git pull origin master --rebase
+#             composer update
+#             php artisan migrate:fresh --seed
+#             source /home/minhaz/nodevenv/admin.shohozseba.com/14/bin/activate && cd /home/minhaz/admin.shohozseba.com
+#             npm run dev

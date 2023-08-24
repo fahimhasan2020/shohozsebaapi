@@ -11,6 +11,7 @@ use Storage;
 
 class NursingAuthController extends Controller
 {
+    
     public function register(Request $request)
     {
         $request->validate([
