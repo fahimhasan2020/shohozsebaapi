@@ -1,5 +1,7 @@
 <?php
 Route::post('/register','DoctorAuthenticationController@register')->name('doctor.register');
+Route::get('/account/activity/{id}','DoctorAuthenticationController@changeDoctorActivity')->name('doctor.account-activity');
+Route::delete('/account/delete/{id}','DoctorAuthenticationController@doctorAccountDelete')->name('doctor.account-activity');
 Route::post('/login','DoctorAuthenticationController@login')->name('doctor.login');
 Route::post('/loginotpveritfy','DoctorAuthenticationController@loginOtpVerification')->name('doctor.login.otp.verify');
 

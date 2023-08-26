@@ -169,4 +169,31 @@ class DoctorAuthenticationController extends Controller
         ]);
         return response()->json(['Success'=>'Pic uploaded']);
     }
+
+    public function changeDoctorActivity($id){
+        $doctor = Doctor::findOrFail($id);
+        if($doctor->deactivated === 1){
+            $doctor->deactivated = 0;
+        }else{
+            $doctor->deactivated = 1;
+        }
+        $status = $doctor->update();
+        if($status){
+            return response()->json(['status'=>true,'success'=>'Status changed successfully']);
+        }else{
+            return response()->json(['status'=>false,'failed'=>'Status changed failed']);
+        }
+        
+        
+    }
+
+    public function doctorAccountDelete($id){
+        $doctor = Doctor::findOrFail($id);
+        $status = $doctor->delete();
+        if($status){
+            return response()->json(['status'=>true,'success'=>'Doctor destroyed successfully']);
+        }else{
+            return response()->json(['status'=>false,'failed'=>'Doctor destroy action failed']);
+        }
+    }
 }
