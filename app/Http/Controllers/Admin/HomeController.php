@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\VerifyOtp;
 use App\Model\VisitorCounter;
 use App\User;
+use App\Model\Doctors\Doctor;
 use App\Model\AdminChat;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -247,6 +248,56 @@ class HomeController extends Controller
     public function nurseSuspend($id)
     {
         $user = Nursing::findOrFail($id);
+        if($user->approved === 1){
+            $user->approved = false;
+            $user->update();
+            return redirect()->back()->with('success','Nursing suspended');
+        }else{
+            $user->approved = true;
+            $user->update();
+            return redirect()->back()->with('success','Nursing Approved');
+        }
+       
+    }
+
+    //doctors
+    public function doctorList()
+    {
+        $nurs = DB::table('doctor')->paginate(10);
+        return Inertia::render('Users/Doctor/DoctorList',
+        [
+            'nurs'=>$nurs
+        ]
+    
+    );   
+    }
+
+    public function doctorDataTable(Request $request)
+    {
+        $per = Doctor::select('id','first_name','last_name','email','profile_picture','phone_number');
+        if ($request->orderBy === 'Newest'){
+            $per->orderBy('id','desc');
+        }elseif ($request->orderBy === 'Name'){
+            $per->orderBy('first_name','asc');
+        }else{
+            $per->orderBy('id','asc');
+        }
+        $search_input = $request->input('search');
+        if ($search_input) {
+            $per->where(function($per) use ($search_input) {
+                $per->where('first_name', 'like', '%' . $search_input . '%')
+                    ->orWhere('last_name', 'like', '%' . $search_input . '%')
+                    ->orWhere('email', 'like', '%' . $search_input . '%')
+                    ->orWhere('phone_number', 'like', '%' . $search_input . '%');
+            });
+        }
+        $permissions = $per->paginate($request->perPage);
+        return $permissions;
+    }
+
+    public function doctorSuspend($id)
+    {
+        $user = Doctor::findOrFail($id);
         if($user->approved === 1){
             $user->approved = false;
             $user->update();

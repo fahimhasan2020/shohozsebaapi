@@ -176,6 +176,5 @@ class UserAuthenticationController extends Controller
     {
         $departments = DB::table('doctor_departments')->get();
         return $departments;
-        //return view('visual',['departments'=>$departments]);
     }
 }

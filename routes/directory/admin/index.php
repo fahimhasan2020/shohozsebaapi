@@ -71,3 +71,9 @@ Route::get('/nurse/datatable','HomeController@nurseDataTable')->name('nurse.list
 Route::delete('/nurse/suspend/{id}','HomeController@nurseSuspend')->name('nurse.suspend');
 /*Users*/
 
+/*Users*/
+Route::get('/doctors','HomeController@doctorList')->name('doctors.list');
+Route::get('/doctors/datatable','HomeController@doctorDataTable')->name('doctors.list.datatable');
+Route::delete('/doctors/suspend/{id}','HomeController@doctorSuspend')->name('doctors.suspend');
+/*Users*/
+

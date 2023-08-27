@@ -60,7 +60,7 @@ class DoctorAuthenticationController extends Controller
             $filess->move(public_path('public/images'), $filenamess);
             $fcpsCertificate = URL::to('/') . '/public/images/' . $filenamess;
         }
-        DB::table('doctor')->insert(['first_name'=>$request->first_name,'last_name'=>$request->last_name,'email'=>$request->email,'phone_number'=>$request->phone_number,'description'=>$request->description,'lat'=>$request->lat,'lng'=>$request->lng,'degrees'=>$request->degrees,'visit'=>$request->visit,'gender'=>$request->gender,'profile_picture'=>$profilePicture,'mbbs_certificate'=> $mbbsCertificate,'blood_group'=>$request->blood_group,'age'=>$request->age,'experience'=>$request->experience,'date_of_birth'=>$request->date_of_birth,'fcps_certificate'=>$fcpsCertificate,'department'=>$request->department]);
+        DB::table('doctor')->insert(['first_name'=>$request->first_name,'last_name'=>$request->last_name,'email'=>$request->email,'phone_number'=>$request->phone_number,'description'=>$request->description,'lat'=>$request->lat,'lng'=>$request->lng,'degrees'=>$request->degrees,'visit'=>$request->visit,'gender'=>$request->gender,'profile_picture'=>$profilePicture,'mbbs_certificate'=> $mbbsCertificate,'blood_group'=>$request->blood_group,'age'=>$request->age,'experience'=>$request->experience,'date_of_birth'=>$request->date_of_birth,'fcps_certificate'=>$fcpsCertificate,'department'=>$request->department,'bmdc'=>$request->bmdc]);
         return response()->json(['success'=>'Account registered sucessfully. Wait for approval']);
     }
     
@@ -195,5 +195,56 @@ class DoctorAuthenticationController extends Controller
         }else{
             return response()->json(['status'=>false,'failed'=>'Doctor destroy action failed']);
         }
+    }
+
+    public function getNearbyDoctors(Request $request){
+        $request->validate([
+            'lat'=>'required',
+            'lng'=>'required',
+        ]);
+        try {
+            
+            $bloodRequest = Doctor::where('deactivated',1)
+                ->whereRaw('(6371 * ACOS(COS(RADIANS(?)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(?)) + SIN(RADIANS(?)) * SIN(RADIANS(lat)))) <= ?', [$request->lat, $request->lng, $request->lat, 3])
+                ->get();
+    
+            return response()->json(["success" => "Found","doctors" => $bloodRequest]);
+        } catch(Exception $error) {
+            return response()->json(["error" => "Failed to load doctors"]);
+        }
+    }
+
+    public function randomDoctors(){
+        $doctor = DB::table('doctor')
+        ->join('doctor_departments', 'doctor.department', '=', 'doctor_departments.id')
+        ->select('doctor.*', 'doctor_departments.name as department_name')
+        ->where('doctor.deactivated', 1)
+        ->inRandomOrder()
+        ->limit(10)
+        ->get();
+        return $doctor;
+    }
+    public function onlineDoctors(){
+        $doctor = DB::table('doctor')
+        ->join('doctor_departments', 'doctor.department', '=', 'doctor_departments.id')
+        ->select('doctor.*', 'doctor_departments.name as department_name')
+        ->where('doctor.online', 1)
+        ->where('doctor.deactivated', 1)
+        ->inRandomOrder()
+        ->limit(10)
+        ->get();
+        return $doctor;
+    }
+    public function departmentDoctors($id){
+        $doctor = DB::table('doctor')
+        ->join('doctor_departments', 'doctor.department', '=', 'doctor_departments.id')
+        ->select('doctor.*', 'doctor_departments.name as department_name')
+        ->where('doctor.online', 1)
+        ->where('doctor.deactivated', 1)
+        ->where('doctor.department', $id)
+        ->inRandomOrder()
+        ->limit(10)
+        ->get();
+        return $doctor;
     }
 }

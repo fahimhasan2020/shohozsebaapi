@@ -24,7 +24,8 @@
                         <ul :class="['list-unstyled',userBlock]"">
                             <li v-if="roles.includes('developper') || roles.includes('superadmin')"><inertia-link href="/admins/admin">Admin</inertia-link></li>
                             <li v-if="roles.includes('developper') || roles.includes('superadmin') || roles.includes('admin')" ><inertia-link href="/admins/user">User</inertia-link></li>
-                            <li v-if="roles.includes('developper') || roles.includes('superadmin') || roles.includes('admin')" ><inertia-link href="/admins/nurse">Nurs</inertia-link></li>
+                            <li v-if="roles.includes('developper') || roles.includes('superadmin') || roles.includes('admin')" ><inertia-link href="/admins/nurse">Nurse</inertia-link></li>
+                            <li v-if="roles.includes('developper') || roles.includes('superadmin') || roles.includes('admin')" ><inertia-link href="/admins/doctors">Doctors</inertia-link></li>
                         </ul>
                     </li><!----------Users------------>
 

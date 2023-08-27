@@ -22,8 +22,8 @@ class CreateDoctor extends Migration
             $table->text('degrees')->nullable();
             $table->integer('department');
             $table->integer('visit');
-            $table->integer('lat')->nullable();
-            $table->integer('lng')->nullable();
+            $table->string('lat')->nullable();
+            $table->string('lng')->nullable();
             $table->string('first_name',200)->nullable();
             $table->string('last_name',200)->nullable();
             $table->string('gender',200)->nullable();
@@ -38,6 +38,7 @@ class CreateDoctor extends Migration
             $table->boolean('blocked')->default(false);
             $table->boolean('deactivated')->default(false);
             $table->dateTime('date_of_birth')->nullable();
+            $table->string('bmdc')->nullable();
             $table->string('phone_number')->nullable()->unique();
             $table->string('remember_token')->nullable();
             $table->timestamps();

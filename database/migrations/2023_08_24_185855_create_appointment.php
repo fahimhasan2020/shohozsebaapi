@@ -21,7 +21,7 @@ class CreateAppointment extends Migration
             $table->string('age');
             $table->string('blood_group');
             $table->string('starting_time');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('type')->default('online');
             $table->string('gender')->default('male');
             $table->string('previous_prescription',300)->nullable();

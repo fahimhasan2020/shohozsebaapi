@@ -14,3 +14,6 @@ Route::post('/update/dp','DoctorAuthenticationController@updateDp')->name('docto
 });
 Route::get('/update/online/{id}/{value}','DoctorAuthenticationController@updateOnline')->name('doctor.updateOnline');
 Route::get('/get/online/{id}','DoctorAuthenticationController@getOnline')->name('doctor.getOnline');
+Route::post('/get/nearbydoctors','DoctorAuthenticationController@getNearbyDoctors')->name('doctor.getNearby');
+Route::get('/get/randomdoctors','DoctorAuthenticationController@randomDoctors')->name('doctor.random');
+Route::get('/get/department/{id}','DoctorAuthenticationController@departmentDoctors')->name('doctor.department');

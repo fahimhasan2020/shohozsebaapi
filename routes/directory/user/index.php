@@ -43,3 +43,12 @@ Route::post('/create/appointment/transection/record','UserAppointmentController@
 Route::get('/appointment/transection/byuserid/{id}','UserAppointmentController@getAppointmentTransectionHistoryByUserId')->name('appointment_transection_history_get_by_user_id');
 Route::get('/appointment/transection/bydoctorid/{id}','UserAppointmentController@getAppointmentTransectionHistoryByDoctorId')->name('appointment_transection_history_get_by_doctor_id');
 Route::get('/appointment/transection/byappointmentid/{id}','UserAppointmentController@getAppointmentTransectionHistoryByAppointmentId')->name('appointment_transection_history_get_by_appointment_id');
+
+
+Route::post('/create/review','UserAppointmentController@postReview')->name('appointment_review_post');
+Route::get('/review/getuser/{id}','UserAppointmentController@getReviewByUserId')->name('appointment_review_get_user');
+Route::get('/review/getdoctor/{id}','UserAppointmentController@getReviewByDoctorId')->name('appointment_get_doctor');
+Route::get('/review/getappointment/{id}','UserAppointmentController@getReviewByAppointmentId')->name('appointment_get_review_doctor');
+Route::get('/review/changestatus/{id}/{status}','UserAppointmentController@changeAppointmentReviewStatus')->name('appointment__review_change_status');
+Route::get('/lastappointeddoctor/{id}','UserAppointmentController@lastAppointedDoctor')->name('appointment_doctor_last');
+Route::get('/search/doctor/{searchText}','UserAppointmentController@searchDoctor')->name('search.doctor');
