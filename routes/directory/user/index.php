@@ -9,8 +9,11 @@ Route::get('/doctordepartments','UserAuthenticationController@doctorDepartments'
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/update/profile','UserAuthenticationController@detailsUpdate')->name('profile-update');
 });
+
 Route::post('/blood/request','HomeController@bloodRequest')->name('blood-request');
 Route::post('/nearer/blood/request','HomeController@nearerBloodRequest')->name('nearer-blood-request');
+Route::get('/get/blood/request/{userId}','HomeController@getRequestByUserId')->name('get-blood-request-user');
+Route::put('/update/blood/request/{id}','HomeController@closeBloodRequest')->name('update-blood-request-user');
 
 
 Route::prefix('nursing')->group(function () {

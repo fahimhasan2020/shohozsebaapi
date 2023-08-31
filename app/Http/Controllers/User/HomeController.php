@@ -21,12 +21,15 @@ class HomeController extends Controller
         'lng'=>'required',
         'location_details'=>'required',
         'donation_time'=>'required',
+        'userName'=>'required',
+        'details'=>'required',
     ]);
     
     try {
         BloodRequest::create($request->all());
         $subscribers = Subscriber::select('id', 'first_name', 'last_name', 'phone_number', 'lat', 'lng', 'blood_group')
             ->where('blood_group', $request->group)
+            ->whereNotNull('phone_number') // Add this line to filter out empty phone numbers
             ->whereRaw('(6371 * ACOS(COS(RADIANS(?)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(?)) + SIN(RADIANS(?)) * SIN(RADIANS(lat)))) <= ?', [$request->lat, $request->lng, $request->lat, 3])
             ->get();
 
@@ -39,7 +42,6 @@ class HomeController extends Controller
 public function nearerBloodRequest(Request $request )
 {
     $request->validate([
-        'userId'=>'required',
         'lat'=>'required',
         'lng'=>'required',
     ]);
@@ -54,11 +56,18 @@ public function nearerBloodRequest(Request $request )
         return response()->json(["success" => "Found", "status" => 1, "bloodRequest" => $bloodRequest]);
     } catch(Exception $error) {
         return response()->json(["error" => "Failed to load blood request", "status" => 0]);
-    }
+    }   
+}
 
-
-
-    
+public function getRequestByUserId($id){
+    $requests = BloodRequest::where(['userId'=>$id,'active'=>1])->get();
+    return $requests;
+}
+public function closeBloodRequest($id){
+    $requests = BloodRequest::findOrFail($id);
+    $requests->active = 0;
+    $requests->update();
+    return response()->json(['success'=>'Request closed']);
 }
 
 }
