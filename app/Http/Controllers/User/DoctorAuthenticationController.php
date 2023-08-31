@@ -239,7 +239,6 @@ class DoctorAuthenticationController extends Controller
         $doctor = DB::table('doctor')
         ->join('doctor_departments', 'doctor.department', '=', 'doctor_departments.id')
         ->select('doctor.*', 'doctor_departments.name as department_name')
-        ->where('doctor.online', 1)
         ->where('doctor.deactivated', 1)
         ->where('doctor.department', $id)
         ->inRandomOrder()
