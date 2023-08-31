@@ -219,7 +219,10 @@ class UserAppointmentController extends Controller
         }
     }
     public function searchDoctor($searchText){
-        $doctor = Doctor::where('first_name', 'LIKE', "%$searchText%")
+        $doctor = DB::table('doctor')
+            ->join('doctor_departments', 'doctor.department', '=', 'doctor_departments.id')
+            ->select('doctor.*', 'doctor_departments.name as department_name')
+            ->where('first_name', 'LIKE', "%$searchText%")
             ->orWhere('last_name', 'LIKE', "%$searchText%")
             ->get();
         return $doctor;
