@@ -26,14 +26,14 @@ class HomeController extends Controller
     ]);
     
     try {
-        BloodRequest::create($request->all());
+        $data = BloodRequest::create($request->all());
         $subscribers = Subscriber::select('id', 'first_name', 'last_name', 'phone_number', 'lat', 'lng', 'blood_group')
             ->where('blood_group', $request->group)
             ->whereNotNull('phone_number') // Add this line to filter out empty phone numbers
             ->whereRaw('(6371 * ACOS(COS(RADIANS(?)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(?)) + SIN(RADIANS(?)) * SIN(RADIANS(lat)))) <= ?', [$request->lat, $request->lng, $request->lat, 3])
             ->get();
 
-        return response()->json(["success" => "Request Submitted", "status" => 1, "subscribers" => $subscribers]);
+        return response()->json(["success" => "Request Submitted", "status" => 1, "subscribers" => $subscribers,"data"=>$data]);
     } catch(Exception $error) {
         return response()->json(["error" => "Failed to blood request", "status" => 0]);
     }
