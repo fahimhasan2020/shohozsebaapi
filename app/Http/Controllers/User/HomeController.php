@@ -48,7 +48,7 @@ public function nearerBloodRequest(Request $request )
 
     try {
         
-        $bloodRequest = BloodRequest::select("group","active","userId","donorId","donorName","purchagable","userName","phone","lat","lng","location_details","donation_time","push_token","details","donor_lat","donor_lng")
+        $bloodRequest = BloodRequest::select('id',"group","active","userId","donorId","donorName","purchagable","userName","phone","lat","lng","location_details","donation_time","push_token","details","donor_lat","donor_lng")
             ->where('active',1)
             ->whereRaw('(6371 * ACOS(COS(RADIANS(?)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(?)) + SIN(RADIANS(?)) * SIN(RADIANS(lat)))) <= ?', [$request->lat, $request->lng, $request->lat, 3])
             ->get();
