@@ -189,4 +189,12 @@ class UserAuthenticationController extends Controller
         $departments = DB::table('doctor_departments')->get();
         return $departments;
     }
+
+    public function updateUserLocation(Request $request){
+        $user = Subscriber::findOrFail($request->user_id);
+        $user->lat = $request->lat;
+        $user->lng = $request->lng;
+        $user->update();
+        return response()->json(['success'=>'Location updated']);
+    }
 }

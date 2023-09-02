@@ -9,6 +9,7 @@ Route::get('/doctordepartments','UserAuthenticationController@doctorDepartments'
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/update/profile','UserAuthenticationController@detailsUpdate')->name('profile-update');
 });
+Route::post('/update/coordinates','UserAuthenticationController@updateUserLocation')->name('profile-update-location');
 
 Route::post('/blood/request','HomeController@bloodRequest')->name('blood-request');
 Route::post('/nearer/blood/request','HomeController@nearerBloodRequest')->name('nearer-blood-request');
