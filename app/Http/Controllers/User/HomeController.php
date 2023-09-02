@@ -72,7 +72,8 @@ public function closeBloodRequest($id){
 
 public function getRequestNearById($id){
     $requests = BloodRequest::where('id',$id)->get();
-    return $request;
+    $appDeeplink = "com.shohozseba.userapp://bloodrequest/".$id;
+    return redirect()->away($appDeeplink);
 }
 
 }
