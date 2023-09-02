@@ -70,4 +70,9 @@ public function closeBloodRequest($id){
     return response()->json(['success'=>'Request closed']);
 }
 
+public function getRequestNearById($id){
+    $requests = BloodRequest::where('id',$id)->get();
+    return $request;
+}
+
 }

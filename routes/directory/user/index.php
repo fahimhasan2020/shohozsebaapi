@@ -13,6 +13,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::post('/blood/request','HomeController@bloodRequest')->name('blood-request');
 Route::post('/nearer/blood/request','HomeController@nearerBloodRequest')->name('nearer-blood-request');
 Route::get('/get/blood/request/{userId}','HomeController@getRequestByUserId')->name('get-blood-request-user');
+Route::get('/get/bloodrequest/near/{id}','HomeController@getRequestNearById')->name('get-blood-request-near-user');
 Route::put('/update/blood/request/{id}','HomeController@closeBloodRequest')->name('update-blood-request-user');
 
 
