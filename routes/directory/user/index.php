@@ -2,6 +2,7 @@
 Route::get('/','UserController@index')->name('user');
 Route::post('/data-update','UserController@uploadPhoto')->name('user');
 Route::post('/login','UserAuthenticationController@login')->name('post-login');
+Route::post('/get/user/data/{id}','UserAuthenticationController@getLoggedInUserData')->name('getDate');
 Route::post('/social/login','UserAuthenticationController@socialLogin')->name('social-login');
 Route::post('/otp/verify','UserAuthenticationController@loginOtpVerification')->name('post-verify');
 Route::post('/token/verify','UserAuthenticationController@verifyLogin')->name('token-verify');

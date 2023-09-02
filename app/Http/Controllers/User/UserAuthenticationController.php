@@ -197,4 +197,8 @@ class UserAuthenticationController extends Controller
         $user->update();
         return response()->json(['success'=>'Location updated']);
     }
+    public function getLoggedInUserData($id){
+        $user = Subscriber::where('id',$id)->first();
+        return $user;
+    }
 }
