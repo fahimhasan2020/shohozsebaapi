@@ -19,13 +19,15 @@ class UserAuthenticationController extends Controller
     public function login(Request $request)
     {
         $this->validate($request, [
-            'phoneNumber' => 'required'
+            'phoneNumber' => 'required',
+            'push_token' => 'required'
         ]);
 
         $user = Subscriber::where('phone_number', $request->phoneNumber)->first();
         if(!$user){
            $newUser =  Subscriber::create([
-                'phone_number'=>$request->phoneNumber
+                'phone_number'=> $request->phoneNumber,
+                'push_token'=> $request->push_token
             ]);
             $otp = rand(1111,9999);
             $to = $request->phoneNumber;
@@ -45,14 +47,17 @@ class UserAuthenticationController extends Controller
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $smsresult = curl_exec($ch);    
-            return response()->json(['otp'=>$otp]);
+            return response()->json(['otp'=>$otp,'first_time'=>true]);
         }else{
             if($user->suspended == 1){
                 throw ValidationException::withMessages([
                     'error' => ['Account is suspended. Contact authority'],
                 ]);
             }else{
-                $otp = rand(1111,9999);
+            $tokena = Subscriber::find($user->id);
+            $tokena = $request->push_token;
+            $tokena->update();
+            $otp = rand(1111,9999);
             $to = $request->phoneNumber;
             $token = "ea8d985738b5a530e785ded316150b1b";
             $message = "আপনার ওটিপি কোড হলো:".$otp."    depnHoB23DE";
@@ -61,7 +66,7 @@ class UserAuthenticationController extends Controller
                 'to'=>"$to",
                 'message'=>"$message",
                 'token'=>"$token"
-                ); 
+                );
             $ch = curl_init(); 
             curl_setopt($ch, CURLOPT_URL,$url);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -70,7 +75,7 @@ class UserAuthenticationController extends Controller
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $smsresult = curl_exec($ch);    
-            return response()->json(['otp'=>$otp]);
+            return response()->json(['otp'=>$otp,'first_time'=>false]);
             }
         }
     }
@@ -93,7 +98,8 @@ class UserAuthenticationController extends Controller
             'email'=>'required',
             'first_name'=>'required',
             'last_name'=>'required',
-            'profile_picture'=>'required'
+            'profile_picture'=>'required',
+            'push_token'=>'required',
         ]);
         $user = Subscriber::where('email', $request->email)->first();
         if(!$user){
@@ -102,19 +108,22 @@ class UserAuthenticationController extends Controller
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
                 'profile_picture' => $request->profile_picture,
+                'push_token' => $request->push_token,
             ]);
             $findUser = Subscriber::where('email', $request->email)->first();
             $token = $findUser->createToken("Oppo G18 Pro")->plainTextToken;
             $response = [
                 'user'=>$findUser,
-                'token'=>$token
+                'token'=>$token,
+                'first_time'=>true
             ];
             return response($response,201);
         }else{
             $token = $user->createToken("Oppo G18 Pro")->plainTextToken;
             $response = [
                 'user'=>$user,
-                'token'=>$token
+                'token'=>$token,
+                'first_time'=>false
             ];
             return response($response,201);
         }
