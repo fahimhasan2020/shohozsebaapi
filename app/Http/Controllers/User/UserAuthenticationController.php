@@ -55,7 +55,7 @@ class UserAuthenticationController extends Controller
                 ]);
             }else{
             $tokena = Subscriber::find($user->id);
-            $tokena = $request->push_token;
+            $tokena->push_token = $request->push_token;
             $tokena->update();
             $otp = rand(1111,9999);
             $to = $request->phoneNumber;
@@ -120,6 +120,9 @@ class UserAuthenticationController extends Controller
             return response($response,201);
         }else{
             $token = $user->createToken("Oppo G18 Pro")->plainTextToken;
+            $tokena = Subscriber::find($user->id);
+            $tokena->push_token = $request->push_token;
+            $tokena->update();
             $response = [
                 'user'=>$user,
                 'token'=>$token,
