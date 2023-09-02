@@ -75,5 +75,9 @@ public function getRequestNearById($id){
     $appDeeplink = "com.shohozseba.userapp://bloodrequest/".$id;
     return redirect()->away($appDeeplink);
 }
+public function getBloodRequestById($id){
+    $requests = BloodRequest::where('id',$id)->first();
+    return $requests;
+}
 
 }
