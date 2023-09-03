@@ -47,4 +47,9 @@ class MedicineController extends Controller
         return $order;
     }
 
+    public function getMedicineShare($id){
+        $appDeeplink = "com.shohozseba.userapp://medicinedetails/".$id;
+        return redirect()->away($appDeeplink);
+    }
+
 }

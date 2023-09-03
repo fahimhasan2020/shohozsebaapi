@@ -67,4 +67,5 @@ Route::get('/search/medicine/{value}','MedicineController@searchMedicine')->name
 Route::get('/medicine/{id}','MedicineController@getMedicineById')->name('get-random-by-id');
 Route::post('/create/medicine/order','MedicineController@postMedicineOrder')->name('post-medicine-order');
 Route::get('/get/medicine/order/user/{id}','MedicineController@getMedicineOrderByUserId')->name('post-medicine-order');
+Route::get('/get/medicine/details/share/{id}','MedicineController@getMedicineShare')->name('get-medicine-share');
 
