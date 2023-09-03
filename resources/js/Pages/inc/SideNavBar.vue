@@ -34,11 +34,11 @@
                         <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-share"></i><span>E-COMMERCE</span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="javascript:void(0);">Orders</a></li>
-                            <li><a href="javascript:void(0);">Vendors</a></li>
-                            <li><a href="javascript:void(0);">Products</a></li>
-                            <li><a href="javascript:void(0);">Categories</a></li>
-                            <li><a href="javascript:void(0);">Settings</a></li>
+                            <li><inertia-link href="/admins/medicines/orders">Orders</inertia-link></li>
+                            <li><inertia-link href="/admins/medicines/invoices">Vendors</inertia-link></li>
+                            <li><inertia-link href="/admins/medicines">Products</inertia-link></li>
+                            <li><inertia-link href="/admins/medicines/categories">Categories</inertia-link></li>
+                            <li><inertia-link href="/admins/medicines/settings">Settings</inertia-link></li>
                         </ul>
                     </li><!---------Social site----------->
 

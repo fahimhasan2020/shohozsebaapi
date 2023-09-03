@@ -77,3 +77,18 @@ Route::get('/doctors/datatable','HomeController@doctorDataTable')->name('doctors
 Route::delete('/doctors/suspend/{id}','HomeController@doctorSuspend')->name('doctors.suspend');
 /*Users*/
 
+/*Medicines */
+Route::get('/medicines','MedicineController@medicineList')->name('medicines.list');
+Route::get('/medicines/sort','MedicineController@medicineSort')->name('medicines.list');
+Route::get('/medicines/orders','MedicineController@medicineOrderList')->name('medicines.order.list');
+Route::get('/medicines/invoices','MedicineController@medicineInvoicesList')->name('medicines.invoices.list');
+Route::get('/medicines/categories','MedicineController@medicineCategoriesList')->name('medicines.categories.list');
+Route::get('/medicines/settings','MedicineController@medicineSettingsList')->name('medicines.list');
+Route::delete('/delete/medicine/{id}','MedicineController@deleteMedicine')->name('medicines.delete');
+Route::post('/create-medicine','MedicineController@postMedicine')->name('medicines.post');
+Route::post('/order/change/status','MedicineController@changeMedicineOrderStatus')->name('medicines.order.change.status');
+Route::put('/edit/medicine','MedicineController@medicineEdit')->name('medicines.edit');
+Route::put('/edit/medicine/delivery','MedicineController@editDeliveryById')->name('medicines.edit.delivery');
+/*Medicines */
+
+

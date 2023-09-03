@@ -59,3 +59,12 @@ Route::get('/review/getappointment/{id}','UserAppointmentController@getReviewByA
 Route::get('/review/changestatus/{id}/{status}','UserAppointmentController@changeAppointmentReviewStatus')->name('appointment__review_change_status');
 Route::get('/lastappointeddoctor/{id}','UserAppointmentController@lastAppointedDoctor')->name('appointment_doctor_last');
 Route::get('/search/doctor/{searchText}','UserAppointmentController@searchDoctor')->name('search.doctor');
+
+
+
+Route::get('/get/random/medicine','MedicineController@getRandomMedicine')->name('get-random-medicine');
+Route::get('/search/medicine/{value}','MedicineController@searchMedicine')->name('get-random-search-medicine');
+Route::get('/medicine/{id}','MedicineController@getMedicineById')->name('get-random-by-id');
+Route::post('/create/medicine/order','MedicineController@postMedicineOrder')->name('post-medicine-order');
+Route::get('/get/medicine/order/user/{id}','MedicineController@getMedicineOrderByUserId')->name('post-medicine-order');
+
