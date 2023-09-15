@@ -298,14 +298,14 @@ class HomeController extends Controller
     public function doctorSuspend($id)
     {
         $user = Doctor::findOrFail($id);
-        if($user->approved === 1){
-            $user->approved = false;
+        if($user->deactivated === 1){
+            $user->deactivated = false;
             $user->update();
-            return redirect()->back()->with('success','Nursing suspended');
+            return redirect()->back()->with('success','Doctor suspended');
         }else{
-            $user->approved = true;
+            $user->deactivated = true;
             $user->update();
-            return redirect()->back()->with('success','Nursing Approved');
+            return redirect()->back()->with('success','Doctor Approved');
         }
        
     }

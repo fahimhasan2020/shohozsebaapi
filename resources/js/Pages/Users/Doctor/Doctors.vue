@@ -77,10 +77,10 @@
                                 <inertia-link href="#" class="btn btn-warning mb-2">
                                     View details
                                 </inertia-link>
-                                <inertia-link v-if="permission.approved == 0" href="#" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Suspend admin" @click.prevent="suspendAdmin(permission.id)">
+                                <inertia-link v-if="permission.deactivated == 0" href="#" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Suspend admin" @click.prevent="suspendAdmin(permission.id,'approve')">
                                     Approve
                                 </inertia-link>
-                                <inertia-link v-else href="#" class="btn btn-primary " data-toggle="tooltip" data-placement="top" title="Suspend admin" @click.prevent="unSuspendAdmin(permission.id)">
+                                <inertia-link v-else href="#" class="btn btn-primary " data-toggle="tooltip" data-placement="top" title="Suspend admin" @click.prevent="suspendAdmin(permission.id,'unapprove')">
                                     Hold
                                 </inertia-link>
                             </td>
@@ -476,9 +476,9 @@
                     });
                 });
             },
-            suspendAdmin(id){
-                this.$confirm("Are you sure to approve this Nursing unit?","Warning","warning").then(() => {
-                    this.$inertia.delete('/admins/nurse/suspend/'+id,{
+            suspendAdmin(id,action){
+                this.$confirm("Are you sure to "+action+" this Doctor?","Warning","warning").then(() => {
+                    this.$inertia.delete('/admins/doctors/suspend/'+id,{
                         replace: false,
                         preserveState: false,
                         preserveScroll: true,
