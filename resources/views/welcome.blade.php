@@ -74,7 +74,7 @@
                 </div>
             <div class="content">
                 <div class="title m-b-md">
-                  Sohoj Sheba API
+                  Sohoz Sheba API
                 </div>
 
                 <div class="links">
