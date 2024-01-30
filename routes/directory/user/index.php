@@ -69,3 +69,11 @@ Route::post('/create/medicine/order','MedicineController@postMedicineOrder')->na
 Route::get('/get/medicine/order/user/{id}','MedicineController@getMedicineOrderByUserId')->name('post-medicine-order');
 Route::get('/get/medicine/details/share/{id}','MedicineController@getMedicineShare')->name('get-medicine-share');
 
+
+// notification module
+Route::post('/create/notification','UserController@postNotificationForUser')->name('post-notification-for-user');
+Route::get('/get/notification/{type}/{userId}','UserController@getNotificationByUser')->name('get-notification-by-user');
+Route::delete('/delete/notification/{id}','UserController@deleteNotification')->name('delete-notification-by-id');
+Route::delete('/delete/notification/all/{type}/{userId}','UserController@deleteAllNotification')->name('delete-a-notification-by-id');
+// notification module end
+
